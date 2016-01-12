@@ -1,0 +1,156 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/gla/lab1
+T_opt
+VGSXg<DAA]3N94fS<mX<Z?3
+04 6 4 work sum_tb main 1
+=1-74d02b26ff76-56955a33-7c9fe-2a55
+o-quiet -auto_acc_if_foreign -work work-msim
+n@_opt
+OL;O;10.1;51
+Z1 d/home/gla/lab1
+Ecarry
+Z2 w1452629500
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z5 8carry.vhd
+Z6 Fcarry.vhd
+l0
+L5
+VWDdZ[jz>il7ABVi^CO1Ge1
+!s100 bcRoYCkS4`eDD2TWn19I:0
+Z7 OL;C;10.1;51
+31
+!i10b 1
+Z8 !s108 1452629981.669694
+Z9 !s90 -93|+acc|-work|work-msim|sum.vhd|carry.vhd|fulladder.vhd|
+Z10 !s107 fulladder.vhd|carry.vhd|sum.vhd|
+Z11 o-93 +acc -work work-msim
+Z12 tExplicit 1
+Amain
+R3
+R4
+Z13 DEx4 work 5 carry 0 22 WDdZ[jz>il7ABVi^CO1Ge1
+l12
+L11
+Z14 VChJMGUVGINfD0PmL]Km5[3
+Z15 !s100 :zh3hACiCdNlH<4Z1jYOM1
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Efulladder
+Z16 w1452629972
+R3
+R4
+R1
+Z17 8fulladder.vhd
+Z18 Ffulladder.vhd
+l0
+L4
+Vd3^9gH@iPznek6a<H[j`63
+!s100 XM]QVVS=B@_CV6<Lm5H;i2
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Amain
+R13
+Z19 DEx4 work 3 sum 0 22 aHIjSJFUeY]]>h18BV78?1
+R3
+R4
+DEx4 work 9 fulladder 0 22 d3^9gH@iPznek6a<H[j`63
+l11
+L10
+VZjZjlcP`oJ1WHgMz61nH<0
+!s100 kXzM1OP9_JoEaAV;c>VQ^0
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Esum
+Z20 w1452629502
+R3
+R4
+R1
+Z21 8sum.vhd
+Z22 Fsum.vhd
+l0
+L4
+VaHIjSJFUeY]]>h18BV78?1
+!s100 8:ao_5=Q8kN?HG>]dHKC52
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Amain
+R3
+R4
+R19
+l11
+L10
+Z23 V6=8DMIBo@=zG^`[cVQkeL3
+!s100 d@2J;jSo1IMjc?PAJHRJU1
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Esum_tb
+Z24 w1452629020
+R3
+R4
+R1
+Z25 8sum_tb.vhd
+Z26 Fsum_tb.vhd
+l0
+L4
+VBo3jM]AdGoNKdG`Wddd4A3
+R7
+31
+Z27 !s108 1452629153.209764
+Z28 !s90 -93|+acc|-work|work-msim|sum.vhd|sum_tb.vhd|
+Z29 !s107 sum_tb.vhd|sum.vhd|
+R11
+R12
+!s100 a57V;C2RW2Z<1m^PdPn;V0
+!i10b 1
+Amain
+R19
+R3
+R4
+DEx4 work 6 sum_tb 0 22 Bo3jM]AdGoNKdG`Wddd4A3
+l9
+L7
+VF=aFA`JS<ZY<RVXA;OIf;1
+R7
+31
+R27
+R28
+R29
+R11
+R12
+!s100 S6Jj`KPUoHeIPRW_>PFa42
+!i10b 1
