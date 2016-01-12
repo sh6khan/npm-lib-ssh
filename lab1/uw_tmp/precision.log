@@ -9,7 +9,7 @@
 //  
 //  Running on Linux gla@ecelinux5.uwaterloo.ca #1 SMP Wed Nov 11 08:12:41 EST 2015 2.6.18-407.el5 x86_64
 //  
-//  Start time Tue Jan 12 16:05:14 2016
+//  Start time Tue Jan 12 17:15:54 2016
 # -------------------------------------------------
 # Info: [9566]: Logging session transcript to file /home/gla/npm-lib-ssh/lab1/precision.log
 # 
@@ -25,7 +25,7 @@
 # Info: [40000]: vhdlorder, Release 2008a.22
 # Info: [40000]: Files sorted successfully.
 # Info: [40000]: hdl-analyze, Release RTLC-Precision 2008a.22
-# Info: [42502]: Analyzing input file "/home/gla/npm-lib-ssh/lab1/sum.vhd" ...
+# Info: [42502]: Analyzing input file "/home/gla/npm-lib-ssh/lab1/myflipflop.vhd" ...
 # Info: [641]: Current working directory: /home/gla/npm-lib-ssh/lab1/uw_tmp/.
 # Info: [40000]: RTLC-Driver, Release RTLC-Precision 2008a.22
 # Info: [40000]: Last compiled on Nov 27 2008 12:40:04
@@ -34,23 +34,18 @@
 # Info: [40000]: RTLCompiler, Release RTLC-Precision 2008a.22
 # Info: [40000]: Last compiled on Nov 27 2008 12:46:53
 # Info: [44512]: Initializing...
-# Info: [44522]: Root Module work.sum(main): Pre-processing...
-# Info: [44523]: Root Module work.sum(main): Compiling...
+# Info: [44522]: Root Module work.myflipflop(main): Pre-processing...
+# Info: [44523]: Root Module work.myflipflop(main): Compiling...
+# Info: [44812]: "/home/gla/npm-lib-ssh/lab1/myflipflop.vhd", line 59: Sharing register dtemp with o_q_d
 # Info: [44842]: Compilation successfully completed.
 # Info: [44835]: Total CPU time taken for compilation: 0.0 secs.
-# Info: [44856]: Total lines of RTL compiled: 7.
+# Info: [44856]: Total lines of RTL compiled: 65.
 # Info: [44513]: Overall running time 0.0 secs.
 # Info: [641]: Current working directory: /home/gla/npm-lib-ssh/lab1/uw_tmp/.
 # Info: [644]: Finished compiling design.
-# Info: -- Saving the design database in uw_tmp/sum_gate.xdb
-# Info: [3026]: Writing file: uw_tmp/sum_gate.vhd.
+# Info: i_clock
+# Info: -- Saving the design database in uw_tmp/myflipflop_gate.xdb
+# Info: [3026]: Writing file: uw_tmp/myflipflop_gate.vhd.
 # Info: Info, Command 'auto_write' finished successfully
 # Info: *** synthesis to generic gates succeeded ***
 dofile uw_tmp/uw-gate-synth-precision_rtl.tcl
-# 
-# COMMAND: exit -force
-# 
-# COMMAND: close_results_dir
-# Info: [9578]: Results directory is closed.
-close_results_dir
-exit -force
