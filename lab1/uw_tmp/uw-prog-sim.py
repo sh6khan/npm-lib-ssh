@@ -18,11 +18,11 @@ xsys( "vlib work-msim")
 #------------------------------------------------------------------------
 # compile source files
 
-# xsys( "vcom -93 +acc -work work-msim  sum.vhd sum_tb.vhd")
-xsys( "uw-msim-com  sum.vhd sum_tb.vhd")
+# xsys( "vcom -93 +acc -work work-msim  sum.vhd carry.vhd fulladder.vhd add2.vhd add2_tb.vhd")
+xsys( "uw-msim-com  sum.vhd carry.vhd fulladder.vhd add2.vhd add2_tb.vhd")
 
 #------------------------------------------------------------------------
 # run simulation
 
-xsys( "vsim -lib work-msim     -wlf uw_tmp/vsim.wlf -t 1ns -do uw_tmp/uw-sim.tcl sum_tb(main)")
+xsys( "vsim -lib work-msim     -wlf uw_tmp/vsim.wlf -t 1ns -do uw_tmp/uw-sim.tcl add2_tb(main)")
 

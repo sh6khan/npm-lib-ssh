@@ -1,7 +1,7 @@
-uw-sim /home/ece327/bin/uw-sim sum.vhd
-INFO: Using testbench        : sum_tb
-INFO: Using design entity    : sum
-INFO: Using simulation script: sum_tb.sim
+uw-sim /home/ece327/bin/uw-sim add2.uwp
+INFO: Using testbench        : add2_tb
+INFO: Using design entity    : add2
+INFO: Using simulation script: add2_tb.sim
 ** Warning: vmap will not overwrite local modelsim.ini.
  ** Warning: (vlib-34) Library already exists at "work-msim".
  DEBUG: modelsim_pfx: testing: /opt/ModelSim101/modeltech/bin/
@@ -19,11 +19,29 @@ Model Technology ModelSim SE-64 vcom 10.1 Compiler 2011.12 Dec  5 2011
 -- Compiling entity sum
 -- Compiling architecture main of sum
 -- Compiling architecture main of sum
--- Compiling entity sum_tb
--- Compiling entity sum_tb
--- Compiling architecture main of sum_tb
--- Compiling architecture main of sum_tb
+-- Compiling entity carry
+-- Compiling entity carry
+-- Compiling architecture main of carry
+-- Compiling architecture main of carry
+-- Compiling entity fulladder
+-- Compiling entity fulladder
+-- Compiling architecture main of fulladder
+-- Compiling architecture main of fulladder
 -- Loading entity sum
 -- Loading entity sum
+-- Loading entity carry
+-- Loading entity carry
+-- Compiling entity add2
+-- Compiling entity add2
+-- Compiling architecture main of add2
+-- Compiling architecture main of add2
+-- Loading entity fulladder
+-- Loading entity fulladder
+-- Compiling entity add2_tb
+-- Compiling entity add2_tb
+-- Compiling architecture main of add2_tb
+-- Compiling architecture main of add2_tb
+-- Loading entity add2
+-- Loading entity add2
  
  Reading /opt/ModelSim101/modeltech/tcl/vsim/pref.tcl 

@@ -1,11 +1,11 @@
 source /home/ece327/lib/lib-msim.tcl
 
 proc reload {} {
-  vcom -93 +acc -work work-msim sum.vhd sum_tb.vhd
+  vcom -93 +acc -work work-msim sum.vhd carry.vhd fulladder.vhd add2.vhd add2_tb.vhd
 }
 
-if { "sum_tb.sim" ne "" } {
-  source sum_tb.sim
+if { "add2_tb.sim" ne "" } {
+  source add2_tb.sim
 }
 
 

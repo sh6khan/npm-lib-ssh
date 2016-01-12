@@ -2,7 +2,7 @@ INFO: Starting PRECISION_RTL for logic synthesis
 precision: Executing on platform: CentOS release 5.11 (Final) Kernel \r on an \m  Linux ecelinux5.uwaterloo.ca 2.6.18-407.el5 #1 SMP Wed Nov 11 08:12:41 EST 2015 x86_64 x86_64 x86_64 GNU/Linux 
 precision: Setting MGC_HOME to /opt/Precision_Synthesis_2008a.47/Mgc_home ...
 
-INFO: generic-gate       netlist         written to uw_tmp/add2_gate.vhd
+INFO: generic-gate       netlist         written to uw_tmp/sum_gate.vhd
 INFO: 
 INFO: ***********************************************
 INFO: *

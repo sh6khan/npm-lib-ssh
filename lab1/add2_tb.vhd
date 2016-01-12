@@ -19,13 +19,26 @@ begin
        o_sum  => sum,
        o_cout => cout
      );
+	process
+	begin 
+          a <= "00"; b <= "00"; cin <= '0';
+          wait for 10 ns;
 
-   -- insert VHDL testbench code here
-   
+          a <= "11"; b <= "00"; cin <= '0';
+          wait for 10 ns;
+
+          a <= "10"; b <= "10"; cin <= '1';
+          wait for 10 ns;
+
+          a <= "01"; b <= "01"; cin <= '1';
+          wait for 10 ns;
+	end process;
+
+ 
 end main;
 
 -- question 4
 -- signal | output waveform description
--- sum(0)     
--- sum(1)     
--- cout    
+-- sum(0)   0 1 1 1
+-- sum(1)   0 1 0 1
+-- cout     0 0 1 0

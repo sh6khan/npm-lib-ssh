@@ -13,5 +13,5 @@ o_sum <= i_a xor i_b xor i_cin;
 end architecture;
 
 -- question 1
-  -- insert answer here
-
+--the schematic shows i_a and i_cin entering an xor gate
+--and the resulting signal and i_b entering another xor gate

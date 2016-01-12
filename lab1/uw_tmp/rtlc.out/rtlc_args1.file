@@ -2,11 +2,11 @@
 6:-mixed
 22:-suppress_ver_warnings
 11:-driver_pid
-16:13089@cfgdhebkkj
+16:14309@cfgdhedidc
 11:-top_module
-15:work.add2(main)
+14:work.sum(main)
 5:-main
-15:work.add2(main)
+14:work.sum(main)
 5:-2000
 3:-sv
 7:-xprobe
@@ -36,7 +36,7 @@
 5:10000
 9:-tech_map
 13:-lib_map_file
-31:/home/gla/lab1/uw_tmp//.jaguarc
+43:/home/gla/npm-lib-ssh/lab1/uw_tmp//.jaguarc
 14:-log_mux_merge
 10:-infer_mac
 11:-flatten_or
@@ -201,5 +201,3 @@
 29:-partial_sanity_for_techcells
 4:-hdl
 4:vhdl
-10:-noFsmTH_f
-42:/home/gla/lab1/uw_tmp//rtlc.out/noFsmTH.vh

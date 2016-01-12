@@ -7,11 +7,15 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# vsim -do uw_tmp/uw-sim.tcl -lib work-msim -t 1ns -wlf uw_tmp/vsim.wlf sum_tb(main) 
+# vsim -do uw_tmp/uw-sim.tcl -lib work-msim -t 1ns -wlf uw_tmp/vsim.wlf add2_tb(main) 
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.sum_tb(main)#1
+# Loading work.add2_tb(main)#1
+# Loading work.add2(main)#1
+# Loading work.fulladder(main)#1
 # Loading work.sum(main)#1
+# Loading work.carry(main)#1
 # do uw_tmp/uw-sim.tcl 
 #  

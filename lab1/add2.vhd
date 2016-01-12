@@ -32,5 +32,4 @@ begin
 			o_cout => o_cout	
 		);
 end main;
--- insert architecture here
 
