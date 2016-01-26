@@ -34,11 +34,11 @@ end architecture;
 
 -- question 2
 -- signal   | waveform description
--- a          0 1 0
--- b					0 0 0
--- cin				0 0 1
--- the_sum  	0 1 1
+-- a          0 1 0 0 1 0 0 1 0 0 1
+-- b					0 0 0 0 0 0 0 0 0 0 0
+-- cin				0 0 1 0 0 1 0 0 1 0 0
+-- the_sum  	0 1 1 0 1 1 0 1 1 0 1
 
 
 -- question 3
---the waveforms are repeated after the first 30ns
+--the waveforms are repeated after the first 30ns since once the process in sum_tb reaches the bottom it loops back to the "begin"

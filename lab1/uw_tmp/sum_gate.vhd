@@ -2,7 +2,7 @@
 -- 
 -- Definition of  sum
 -- 
---      Tue Jan 12 16:05:22 2016
+--      Wed Jan 13 21:54:17 2016
 --      
 --      Precision RTL Synthesis, 2008a.47
 -- 
