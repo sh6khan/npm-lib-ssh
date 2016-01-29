@@ -1,0 +1,7 @@
+add wave -radix unsigned -color cyan cur_temp 
+add wave -radix unsigned -color cyan des_temp
+add wave -color cyan reset
+add wave -color cyan clock
+add wave -radix unsigned -color plum state
+
+run 200 ns;

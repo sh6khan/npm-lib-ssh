@@ -27,10 +27,58 @@ architecture main of heatingsys is
   signal state : heat_ty;   
 begin
 
-  -- insert your vhdl code here
+  proc_main: process  
+  begin
+    wait until rising_edge(i_clock);
+      case state is 
+        when off =>
+          if (i_reset = '1') then
+            state <= off;
+          elsif (3 <= (i_des_temp - i_cur_temp) and (i_des_temp - i_cur_temp) < 5) then
+            state <= low;
+          elsif (5 <= (i_des_temp - i_cur_temp)) then
+            state <= high;
+          else
+            state <= off;
+          end if;
+        when low =>
+          if (i_reset = '1') then
+            state <= off;
+          elsif (7 <= (i_des_temp - i_cur_temp)) then
+            state <= high;
+          elsif (2 < (i_cur_temp-i_des_temp)) then
+            state <= off;
+          else
+            state <= low;
+          end if;
+        when high =>
+          if (i_reset = '1') then
+            state <= off;
+          elsif (3 < (i_cur_temp - i_des_temp)) then
+            state <= low;
+          else
+            state <= high;
+          end if;
+        when others =>
+            state <= off;        
+      end case;
+  end process;
+  
+  proc_out: process (state)
+  begin
+    o_heatmode <= state;
+  end process;           
 
 end main;
 
 -- question 1
-  --insert answer here
-
+--1-bit flip flops : 1
+--1-bit latches : 0
+--ANDS : 12
+--ORs : 11
+--XORs : 0
+--NOTs : 13
+--adders : 0
+--subtracters : 2
+--comparators : 0
+--multiplexers : 0
