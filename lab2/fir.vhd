@@ -107,7 +107,6 @@ begin
 end architecture;
 
 -- question 2
-  -- insert your answer here
-
+--there are 47 LUTs used between the 3 adders,so it would be 15 per adder (rounded down)
 -- question 3
-  -- insert your answer here
+--a mult costs 0 LUTS to implement
