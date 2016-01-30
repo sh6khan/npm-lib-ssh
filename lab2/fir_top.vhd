@@ -68,6 +68,7 @@ architecture main of fir_top is
   signal sine_data
        , noise_data
        , audio_out
+       , avg_out
        : word;
   
   --------------------------------------------------------------
@@ -105,7 +106,14 @@ begin
       clk    => data_clk,   
       o_data => noise_data
     );
-      
+  
+  avg : entity work.fir(avg)
+    port map(
+      clk => data_clk,
+      i_data => audio_out,
+      o_data => avg_out
+    );
+  
   --------------------------------------------------------------
   -- core audio connection
   --
@@ -123,7 +131,11 @@ begin
 
   process begin
     wait until rising_edge( data_clk );
-    audio_out <= sine_data;
+    if (sw(17) = '0') then
+      audio_out <= sine_data;
+    elsif (sw(17) = '1') then
+      audio_out <= noise_data;
+    end if;
   end process;
   
   --------------------------------------------------------------
@@ -140,7 +152,14 @@ begin
 
   ----------------------------------------------------
   
-  display_freq <= frequency_map( to_integer ( sine_freq ) );
+  process (sw(17), sine_freq)
+  begin  
+    if (sw(17) = '0') then
+      display_freq <= frequency_map( to_integer ( sine_freq ) );
+    elsif (sw(17) = '1') then
+      display_freq <= x"015E";
+    end if;
+  end process;
 
   hex7 <= to_sevenseg( unsigned(display_freq(15 downto 12)) );
   hex6 <= to_sevenseg( unsigned(display_freq(11 downto  8)) );
@@ -165,10 +184,17 @@ begin
       bit_position <= bit_position + 1;
     end if;
   end process;
-    
-  serial_audio_out <= audio_out(to_integer(15 - bit_position));
   
-  aud_dacdat       <= serial_audio_out;
+  process(audio_out, avg_out, sw(16), bit_position)
+  begin
+    if(sw(16) = '1') then
+      serial_audio_out <= avg_out(to_integer(15 - bit_position));
+    elsif(sw(16) = '0') then
+      serial_audio_out <= audio_out(to_integer(15 - bit_position));
+    end if;
+    aud_dacdat <= serial_audio_out;
+  end process;
+   
   
   --------------------------------------------------------------
   -- audio peripheral

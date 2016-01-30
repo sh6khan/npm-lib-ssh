@@ -1,0 +1,6 @@
+add wave -radix word -color cyan int_data 
+add wave -radix word -color cyan out_data
+add wave -color cyan clock
+
+run 500 ns;
+
