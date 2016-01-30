@@ -20,7 +20,7 @@ architecture main of fir_tb is
   constant clock_period :time := 10 ns;
 begin
   
-  firEnt : entity work.fir(avg)
+  firEnt : entity work.fir(low_pass)
     port map(
       clk => clock,
       i_data => in_data,
@@ -31,13 +31,13 @@ begin
   begin
     --hold in_data at 0 for 5 cycles to clear filter
     in_data <= x"0000";
-    wait for clock_period * 5;
+    wait for clock_period * 18;
     
     in_data <= x"1000";
     wait for clock_period;
 
     in_data <= x"0000";
-    wait for 500 ns;      
+    wait for clock_period * 20;      
 
   end process;
 

@@ -68,7 +68,7 @@ architecture main of fir_top is
   signal sine_data
        , noise_data
        , audio_out
-       , avg_out
+       , fir_out
        : word;
   
   --------------------------------------------------------------
@@ -107,11 +107,11 @@ begin
       o_data => noise_data
     );
   
-  avg : entity work.fir(avg)
+  low_pass : entity work.fir(low_pass)
     port map(
       clk => data_clk,
       i_data => audio_out,
-      o_data => avg_out
+      o_data => fir_out
     );
   
   --------------------------------------------------------------
@@ -185,10 +185,10 @@ begin
     end if;
   end process;
   
-  process(audio_out, avg_out, sw(16), bit_position)
+  process(audio_out, fir_out, sw(16), bit_position)
   begin
     if(sw(16) = '1') then
-      serial_audio_out <= avg_out(to_integer(15 - bit_position));
+      serial_audio_out <= fir_out(to_integer(15 - bit_position));
     elsif(sw(16) = '0') then
       serial_audio_out <= audio_out(to_integer(15 - bit_position));
     end if;

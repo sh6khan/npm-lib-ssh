@@ -7,6 +7,6 @@ TB_ARCH       = main
 TB_VHDL       = fir_synth_pkg.vhd fir_tb.vhd
 
 DESIGN_ENTITY = fir
-# DESIGN_ARCH   = low_pass
-DESIGN_ARCH   = avg
+DESIGN_ARCH   = low_pass
+#DESIGN_ARCH   = avg
 DESIGN_VHDL   = fir_synth_pkg.vhd fir.vhd

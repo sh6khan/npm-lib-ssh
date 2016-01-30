@@ -66,31 +66,45 @@ end architecture;
 -- low-pass filter
 ------------------------------------------------------------------------
 
---architecture low_pass of fir is
+architecture low_pass of fir is
 
   -- Use the signal names tap, prod, and sum, but change the type to
   -- match your needs.
-
---These lines of code are not commented so as to generate errors so you'll notice them!
-
---You'll want to comment out this whole architecture while testing out the averaging one above!
-
---For the tap, prod and sum type you'll want to use word_vector to simplify the code - check for it's defination
-
 --For building the design you'll need to add fir_synth_pkg.vhd to the fir.uwp file.  Now is the time to
 --   start figuring out what the project file is for.  It has to include all vhdl files used in a project.
+  constant num_taps : natural := 17; 
+  signal tap : word_vector(0 to num_taps); 
+  signal prod : word_vector(1 to num_taps);
+  signal sum : word_vector(2 to num_taps);
+
+  attribute logic_block of tap, prod, sum : signal is true;
+begin
+  
+  tap(0) <= i_data;
  
- -- signal tap, prod, sum : std_logic;
-  
-  -- The attribute line below is usually needed to avoid a warning
-  -- from PrecisionRTL that signals could be implemented using
-  -- memory arrays.  
+   
+  delay : for i in 1 to num_taps generate
+    delay_proc : process
+    begin
+      wait until rising_edge(clk);
+        tap(i) <= tap(i-1);
+    end process;
+  end generate;
 
-  --attribute logic_block of tap, prod, sum : signal is true;
-  
---begin
+  prodgen : for i in 1 to num_taps generate
+    prod(i) <= mult( tap(i), lpcoef(i));
+  end generate;
 
---end architecture;
+  sum(2) <= prod(1) + prod(2);
+  
+  sumgen : for i in 3 to num_taps generate
+    sum(i) <= sum(i-1) + prod(i);
+  end generate;
+
+  o_data <= sum(num_taps);
+
+
+end architecture;
 
 -- question 2
   -- insert your answer here
