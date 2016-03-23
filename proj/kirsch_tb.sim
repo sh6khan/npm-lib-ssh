@@ -1,0 +1,30 @@
+add wave sim:/kirsch_tb/clock
+add wave sim:/kirsch_tb/in_valid
+add wave -radix unsigned sim:/kirsch_tb/in_pixel
+add wave sim:/kirsch_tb/reset
+add wave sim:/kirsch_tb/out_mode
+add wave -radix unsigned sim:/kirsch_tb/out_row
+# add wave -radix unsigned sim:/kirsch_tb/uut/o_column
+add wave sim:/kirsch_tb/out_valid
+add wave sim:/kirsch_tb/out_edge
+add wave sim:/kirsch_tb/out_dir
+
+add wave sim:/kirsch_tb/uut/pixel_counter
+add wave sim:/kirsch_tb/uut/row_index
+add wave sim:/kirsch_tb/uut/mem_out
+
+add wave sim:/kirsch_tb/uut/a
+add wave sim:/kirsch_tb/uut/b
+add wave sim:/kirsch_tb/uut/c
+
+add wave sim:/kirsch_tb/uut/d
+add wave sim:/kirsch_tb/uut/e
+add wave sim:/kirsch_tb/uut/f
+
+add wave sim:/kirsch_tb/uut/g
+add wave sim:/kirsch_tb/uut/h
+add wave sim:/kirsch_tb/uut/i
+
+# run 10600000 ns
+run 600000 ns
+
