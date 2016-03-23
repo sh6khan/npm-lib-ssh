@@ -147,7 +147,7 @@ begin
         h <= "00000000";
         i <= "00000000";
 
-      else
+      elsif (i_valid = '1') then
         -- shift the table over
         -- a, h, g, b, and f get values from registers
         -- c and d get new values from the memory
@@ -167,14 +167,25 @@ begin
             c <= mem_out(0);
             d <= mem_out(1);
         elsif(row_index(1) = '1') then
-            c <= mem_out(1);
-            d <= mem_out(2);
-        else
             c <= mem_out(2);
             d <= mem_out(0);
+        else
+            c <= mem_out(1);
+            d <= mem_out(2);
         end if;
 
         e <= i_pixel;
+      else --i_valid = '0'
+        --hold values
+        a <= a;
+        b <= b;
+        c <= c;        
+        d <= d;
+        e <= e;
+        f <= f;
+        g <= g;
+        h <= h;
+        i <= i;
       end if;
     end process;
 
