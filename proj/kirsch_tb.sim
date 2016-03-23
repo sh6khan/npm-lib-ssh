@@ -13,6 +13,8 @@ add wave sim:/kirsch_tb/uut/pixel_counter
 add wave sim:/kirsch_tb/uut/row_index
 add wave sim:/kirsch_tb/uut/mem_out
 
+add wave sim:/kirsch_tb/uut/conv_table
+
 add wave sim:/kirsch_tb/uut/a
 add wave sim:/kirsch_tb/uut/b
 add wave sim:/kirsch_tb/uut/c

@@ -4,7 +4,7 @@ Warning: vmap will not overwrite local modelsim.ini.
 Warning: Library already exists at "work-msim".
 ** Warning: (vlib-34) Library already exists at "work-msim".
  QuestaSim vcom 10.4a Compiler 2015.03 Mar 24 2015
-Start time: 14:47:30 on Mar 23,2016
+Start time: 17:57:30 on Mar 23,2016
 vcom -93 "+acc" -work work-msim mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -40,6 +40,6 @@ vcom -93 "+acc" -work work-msim mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_p
 -- Compiling entity kirsch_tb
 -- Compiling architecture main of kirsch_tb
 -- Loading entity kirsch
-End time: 14:47:30 on Mar 23,2016, Elapsed time: 0:00:00
+End time: 17:57:30 on Mar 23,2016, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 

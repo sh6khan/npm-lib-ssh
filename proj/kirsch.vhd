@@ -71,6 +71,7 @@ architecture main of kirsch is
   signal mem_out    : mem_array;
 
   -- conv table
+  signal conv_table : mem_grid;
   signal a, b, c,
          d, e, f,
          g, h, i    : std_logic_vector(7 downto 0);
@@ -135,17 +136,29 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
         -- clear all of the values
-        a <= "00000000";
-        b <= "00000000";
-        c <= "00000000";
+        -- a <= "00000000";
+        -- b <= "00000000";
+        -- c <= "00000000";
+-- 
+        -- d <= "00000000";
+        -- e <= "00000000";
+        -- f <= "00000000";
+-- 
+        -- g <= "00000000";
+        -- h <= "00000000";
+        -- i <= "00000000";
+        conv_table(0)(0) <= "00000000";
+        conv_table(1)(0) <= "00000000";
 
-        d <= "00000000";
-        e <= "00000000";
-        f <= "00000000";
+        conv_table(0)(1) <= "00000000";
+        conv_table(1)(1) <= "00000000";
 
-        g <= "00000000";
-        h <= "00000000";
-        i <= "00000000";
+        conv_table(0)(2) <= "00000000";
+        conv_table(1)(2) <= "00000000";
+
+        conv_table(2)(0) <= "00000000";
+        conv_table(2)(1) <= "00000000";
+        conv_table(2)(2) <= "00000000";
 
       elsif (i_valid = '1') then
         -- shift the table over
@@ -153,40 +166,41 @@ begin
         -- c and d get new values from the memory
         -- e gets the most recent i_pixel value
 
-        -- left column
-        a <= b;
-        h <= i;
-        g <= f;
+        conv_table(0)(0) <= conv_table(1)(0);
+        conv_table(1)(0) <= conv_table(2)(0);
 
-        -- middle column
-        b <= c;
-        f <= e;
+        conv_table(0)(1) <= conv_table(1)(1);
+        conv_table(1)(1) <= conv_table(2)(1);
+
+        conv_table(0)(2) <= conv_table(1)(2);
+        conv_table(1)(2) <= conv_table(2)(2);
 
         -- right column
         if( row_index(2) = '1') then
-            c <= mem_out(0);
-            d <= mem_out(1);
+            conv_table(2)(0) <= mem_out(0);
+            conv_table(2)(1) <= mem_out(1);
         elsif(row_index(1) = '1') then
-            c <= mem_out(2);
-            d <= mem_out(0);
+            conv_table(2)(0) <= mem_out(2);
+            conv_table(2)(1) <= mem_out(0);
         else
-            c <= mem_out(1);
-            d <= mem_out(2);
+            conv_table(2)(0) <= mem_out(1);
+            conv_table(2)(1) <= mem_out(2);
         end if;
 
-        e <= i_pixel;
-      else --i_valid = '0'
-        --hold values
-        a <= a;
-        b <= b;
-        c <= c;        
-        d <= d;
-        e <= e;
-        f <= f;
-        g <= g;
-        h <= h;
-        i <= i;
+        conv_table(2)(2) <= i_pixel;
       end if;
     end process;
+
+    a <= conv_table(0)(0);
+    b <= conv_table(1)(0);
+    c <= conv_table(2)(0);
+
+    h <= conv_table(0)(1);
+    i <= conv_table(1)(1);
+    d <= conv_table(2)(1);
+
+    g <= conv_table(0)(2);
+    f <= conv_table(1)(2);
+    e <= conv_table(2)(2);
 
 end architecture;

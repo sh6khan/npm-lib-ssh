@@ -18,8 +18,8 @@ xsys( "vlib work-msim")
 #------------------------------------------------------------------------
 # compile source files
 
-# xsys( "vcom -93 +acc -work work-msim  mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd")
-xsys( "uw-msim-com  mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd")
+# xsys( "vcom -93 +acc -work work-msim  kirsch.vhd kirsch_tb.vhd")
+xsys( "uw-msim-com  kirsch.vhd kirsch_tb.vhd")
 
 #------------------------------------------------------------------------
 # run simulation
