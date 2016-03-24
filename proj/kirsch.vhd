@@ -184,7 +184,7 @@ begin
         else
             -- shift all of the bits down
             valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
-            valid_bits_stage2(3 downto 1) <= valid_bits_stage1(2 downto 0);
+            valid_bits_stage2(3 downto 1) <= valid_bits_stage2(2 downto 0);
             -- valid_bits_stage2(2 downto 1) <= valid_bits_stage2(1 downto 0);
             -- set the first bit to 1 when i_valid is high
             valid_bits_stage1(0) <= i_valid;

@@ -9,13 +9,14 @@ z2
 cModel Technology
 Z0 d/home/lpavlovi/ece327/npm-lib-ssh/proj
 T_opt
-!s110 1458855866
-V5N3^[^:i=dE0lBENLOF2U0
+!s110 1458856158
+VaB^JWA1?A2AYl`?Y@o<nc0
 Z1 04 9 4 work kirsch_tb main 1
-=1-14dae9740821-56f45fb9-d5cda-3a86
+=1-14dae9740821-56f460de-8aabc-3e9c
 Z2 o-quiet -auto_acc_if_foreign -work work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g /kirsch_tb/period=20
 n@_opt
 Z3 OE;O;10.4a;61
+R0
 T_opt1
 !s110 1458855684
 V<R=>SOW=56zEVG21NgcZX0
@@ -40,9 +41,9 @@ VGCig7kb;>fg_G=A=lW0[f3
 Z10 OE;C;10.4a;61
 31
 b1
-Z11 !s110 1458855858
+Z11 !s110 1458856193
 !i10b 1
-Z12 !s108 1458855858.000000
+Z12 !s108 1458856192.000000
 Z13 !s90 -93|+acc|-work|work-msim|mem.vhd|kirsch_synth_pkg.vhd|kirsch.vhd|string_pkg.vhd|kirsch_synth_pkg.vhd|kirsch_unsynth_pkg.vhd|kirsch_tb.vhd|
 Z14 !s107 kirsch_tb.vhd|kirsch_unsynth_pkg.vhd|string_pkg.vhd|kirsch.vhd|kirsch_synth_pkg.vhd|mem.vhd|
 !i113 0
@@ -55,8 +56,8 @@ R5
 R6
 l0
 L21
-V5haXbWPG4TL[38o5aN4>[1
-!s100 CmEX2UN0SXVME9G83RhDn3
+Z18 V5haXbWPG4TL[38o5aN4>[1
+Z19 !s100 CmEX2UN0SXVME9G83RhDn3
 R10
 31
 R11
@@ -67,18 +68,18 @@ R14
 !i113 0
 R15
 R16
-Z18 nbody
+Z20 nbody
 Ekirsch
-Z19 w1458855664
-Z20 DPx4 work 7 max_pkg 0 22 lTTdnNd@UjJP7O7DzQSPc2
-Z21 DPx4 work 9 state_pkg 0 22 WbnN1gb15e8[>?DIAa3Qd2
-Z22 DPx4 work 16 kirsch_synth_pkg 0 22 dn^kVH<g][g2VA_XMTZ742
+Z21 w1458856124
+Z22 DPx4 work 7 max_pkg 0 22 lTTdnNd@UjJP7O7DzQSPc2
+Z23 DPx4 work 9 state_pkg 0 22 WbnN1gb15e8[>?DIAa3Qd2
+Z24 DPx4 work 16 kirsch_synth_pkg 0 22 dn^kVH<g][g2VA_XMTZ742
 R4
 R5
 R6
 R0
-Z23 8kirsch.vhd
-Z24 Fkirsch.vhd
+Z25 8kirsch.vhd
+Z26 Fkirsch.vhd
 l0
 L33
 VnLg:KWz_L0=UAgO[6BW2;0
@@ -94,18 +95,18 @@ R14
 R15
 R16
 Amain
-Z25 DEx4 work 3 mem 0 22 @9AHD<HI:>27;hdHcl6zz3
-R20
-R21
+Z27 DEx4 work 3 mem 0 22 @9AHD<HI:>27;hdHcl6zz3
 R22
+R23
+R24
 R4
 R5
 R6
-Z26 DEx4 work 6 kirsch 0 22 nLg:KWz_L0=UAgO[6BW2;0
+Z28 DEx4 work 6 kirsch 0 22 nLg:KWz_L0=UAgO[6BW2;0
 l138
 L64
-VQaF9Nh;R`>7b[kC9]lNiY0
-!s100 d_V]`DimmaSAl??BRmQ]50
+Z29 VjC;7I4WMQ2llJ=W3`hE?D3
+Z30 !s100 GZFI6EMFh_Ki;=jb9TSMQ1
 R10
 31
 R11
@@ -122,8 +123,8 @@ R5
 R6
 R7
 R0
-Z27 8kirsch_synth_pkg.vhd
-Z28 Fkirsch_synth_pkg.vhd
+Z31 8kirsch_synth_pkg.vhd
+Z32 Fkirsch_synth_pkg.vhd
 l0
 L12
 Vdn^kVH<g][g2VA_XMTZ742
@@ -140,14 +141,14 @@ R14
 R15
 R16
 Bbody
-R22
+R24
 R4
 R5
 R6
 l0
 L69
-V8bYPE=@AW^6JhTccYURJa2
-!s100 Q^^oHW`JK5k7UoEfl^R=X1
+Z33 V8bYPE=@AW^6JhTccYURJa2
+Z34 !s100 Q^^oHW`JK5k7UoEfl^R=X1
 R10
 31
 R11
@@ -158,19 +159,19 @@ R14
 !i113 0
 R15
 R16
-R18
+R20
 Ekirsch_tb
 R7
-Z29 DPx4 work 10 string_pkg 0 22 ?Va4bV1_?joU`WWRd`UP@2
-Z30 DPx4 work 18 kirsch_unsynth_pkg 0 22 F>JT^T?=>S6j3aJA]VAJ40
+Z35 DPx4 work 10 string_pkg 0 22 ?Va4bV1_?joU`WWRd`UP@2
+Z36 DPx4 work 18 kirsch_unsynth_pkg 0 22 F>JT^T?=>S6j3aJA]VAJ40
 R17
-R22
+R24
 R4
 R5
 R6
 R0
-Z31 8kirsch_tb.vhd
-Z32 Fkirsch_tb.vhd
+Z37 8kirsch_tb.vhd
+Z38 Fkirsch_tb.vhd
 l0
 L23
 Vb=NOh>gUSTTgfK<M_0K4]1
@@ -186,21 +187,21 @@ R14
 R15
 R16
 Amain
-R20
-R21
-R26
-R29
-R30
-R17
 R22
+R23
+R28
+R35
+R36
+R17
+R24
 R4
 R5
 R6
-DEx4 work 9 kirsch_tb 0 22 b=NOh>gUSTTgfK<M_0K4]1
+Z39 DEx4 work 9 kirsch_tb 0 22 b=NOh>gUSTTgfK<M_0K4]1
 l80
 L32
-VM>bn5z9J1dAjW>nLncQJz1
-!s100 =1dNKXEL?aJXIj0J@n^Gm2
+Z40 VM>bn5z9J1dAjW>nLncQJz1
+Z41 !s100 =1dNKXEL?aJXIj0J@n^Gm2
 R10
 31
 R11
@@ -212,9 +213,9 @@ R14
 R15
 R16
 Pkirsch_unsynth_pkg
-R22
+R24
 R17
-R29
+R35
 R4
 R5
 R6
@@ -238,17 +239,17 @@ R14
 R15
 R16
 Bbody
-R30
-R22
+R36
+R24
 R17
-R29
+R35
 R4
 R5
 R6
 l0
 L122
-V27]8iR5H@hBGS?SYE=YRI0
-!s100 D2`Sg3Nlb^1kE6A4Cg?;f2
+Z42 V27]8iR5H@hBGS?SYE=YRI0
+Z43 !s100 D2`Sg3Nlb^1kE6A4Cg?;f2
 R10
 31
 R11
@@ -259,17 +260,17 @@ R14
 !i113 0
 R15
 R16
-R18
+R20
 Pmax_pkg
-R22
-R21
+R24
+R23
 R4
 R5
 R6
-R19
+R21
 R0
-R23
-R24
+R25
+R26
 l0
 L19
 VlTTdnNd@UjJP7O7DzQSPc2
@@ -290,15 +291,15 @@ R4
 R5
 R6
 R0
-Z33 8mem.vhd
-Z34 Fmem.vhd
+Z44 8mem.vhd
+Z45 Fmem.vhd
 l0
 L23
 V@9AHD<HI:>27;hdHcl6zz3
 !s100 A:0W>;Uj;HXBoI]`^8EGd1
 R10
 31
-R11
+Z46 !s110 1458856192
 !i10b 1
 R12
 R13
@@ -310,14 +311,14 @@ Amain
 R4
 R5
 R6
-R25
+R27
 l47
 L37
-V^jkooEEAd5OmS`Y>1m0WT0
-!s100 7USKP;XOVm>>g9=1LN4i22
+Z47 V^jkooEEAd5OmS`Y>1m0WT0
+Z48 !s100 7USKP;XOVm>>g9=1LN4i22
 R10
 31
-R11
+R46
 !i10b 1
 R12
 R13
@@ -329,10 +330,10 @@ Pstate_pkg
 R4
 R5
 R6
-R19
+R21
 R0
-R23
-R24
+R25
+R26
 l0
 L5
 VWbnN1gb15e8[>?DIAa3Qd2
@@ -352,8 +353,8 @@ R5
 R6
 R7
 R0
-Z35 8string_pkg.vhd
-Z36 Fstring_pkg.vhd
+Z49 8string_pkg.vhd
+Z50 Fstring_pkg.vhd
 l0
 L7
 V?Va4bV1_?joU`WWRd`UP@2
@@ -370,13 +371,13 @@ R14
 R15
 R16
 Bbody
-R29
+R35
 R5
 R6
 l0
 L17
-V^SglVKeTT4a;2k2cNhI0W3
-!s100 JFS8:j^04ni@AVIzUz=9?0
+Z51 V^SglVKeTT4a;2k2cNhI0W3
+Z52 !s100 JFS8:j^04ni@AVIzUz=9?0
 R10
 31
 R11
@@ -387,4 +388,4 @@ R14
 !i113 0
 R15
 R16
-R18
+R20

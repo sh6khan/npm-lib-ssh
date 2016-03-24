@@ -39,6 +39,5 @@ add wave sim:/kirsch_tb/uut/a
 add wave sim:/kirsch_tb/uut/h
 add wave sim:/kirsch_tb/uut/g
 
-# run 10600000 ns
-run 600000 ns
+run 10600000 ns
 
