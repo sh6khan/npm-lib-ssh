@@ -43,7 +43,6 @@ entity kirsch is
     o_dir      : out std_logic_vector(2 downto 0);                      
     o_mode     : out std_logic_vector(1 downto 0);
     o_row      : out std_logic_vector(7 downto 0);
-    -- o_col      : out std_logic_vector(7 downto 0);
     ------------------------------------------
     -- debugging inputs and outputs
     debug_key      : in  std_logic_vector( 3 downto 1) ; 
@@ -96,7 +95,7 @@ architecture main of kirsch is
 
   -- memory
   signal valid_bits_stage1 : valid_bit_ty;
-  signal valid_bits_stage2 : valid_bit_ty;
+  signal valid_bits_stage2 : std_logic_vector(2 downto 0);
 
   -- registers
   signal r1 : unsigned(10 downto 0);    -- 11 bits
@@ -108,7 +107,7 @@ architecture main of kirsch is
   signal r7 : unsigned(12 downto 0);
   signal r8 : unsigned(12 downto 0); -- output
 
-  signal r_edge : std_logic;
+  signal r_o_valid : std_logic;
 
   -- addition
   signal add1 : unsigned(8 downto 0);   -- 9 bits
@@ -179,13 +178,11 @@ begin
         -- reset to the initial state 
         if( i_reset = '1') then
             valid_bits_stage1 <= initial_valid_bit;
-            valid_bits_stage2 <= initial_valid_bit;
-            -- valid_bits_stage2 <= "000";
+            valid_bits_stage1 <= "000";
         else
             -- shift all of the bits down
             valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
-            valid_bits_stage2(3 downto 1) <= valid_bits_stage1(2 downto 0);
-            -- valid_bits_stage2(2 downto 1) <= valid_bits_stage2(1 downto 0);
+            valid_bits_stage2(2 downto 1) <= valid_bits_stage2(1 downto 0);
             -- set the first bit to 1 when i_valid is high
             valid_bits_stage1(0) <= i_valid;
             valid_bits_stage2(0) <= valid_bits_stage1(3);
@@ -308,24 +305,25 @@ begin
       if( i_reset = '1') then
             r7 <= to_unsigned(0, 13);
       else
-            r7 <= ("000" & r5.magnitude) sll 3;
+            r7 <= r5.magnitude sll 3;
       end if;
   end process;
 
   register8_proc: process begin
       wait until rising_edge(i_clock);
-      if(valid_bits_stage2(2) = '1') and ((r7 - r6) > 383) then
-          r_edge <= '1';
+      if( i_reset = '1') then
+            r8 <= to_unsigned(0, 13);
       else
-          r_edge <= '0';
+            if((r7 - r6) > 383) then
+                r_o_valid <= '1';
+            else
+                r_o_valid <= '0';
+            end if;
       end if;
   end process;
 
-  o_valid <= valid_bits_stage2(3); -- r_edge;
-  o_dir <= r5.direction and (2 downto 0 => r_edge); 
-  o_edge <= r_edge;
-  -- o_col <= pixel_counter(7 downto 0);
-  o_row <= std_logic_vector(pixel_counter(15 downto 8));
+  o_valid <= r_o_valid;
+  o_dir <= r5.direction and (2 downto 0 => r_o_valid); 
 
   increment_conv_table: process begin
       wait until rising_edge(i_clock);

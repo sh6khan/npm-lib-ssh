@@ -1,0 +1,61 @@
+# //  Questa Sim
+# //  Version 10.4a linux Mar 24 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# vsim -lib work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g/kirsch_tb/period=20 -wlf uw_tmp/vsim.wlf -t 1ns -do "uw_tmp/uw-sim.tcl" kirsch_tb 
+# Start time: 17:44:25 on Mar 24,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.kirsch_synth_pkg(body)
+# Loading work.file_pkg(body)
+# Loading work.string_pkg(body)
+# Loading work.kirsch_unsynth_pkg(body)
+# Loading work.state_pkg
+# Loading work.max_pkg
+# Loading work.kirsch_tb(main)#1
+# Loading work.kirsch(main)#1
+# Loading work.mem(main)#1
+# do uw_tmp/uw-sim.tcl
+# Break key hit
+# ** Error: Macro Break
+#     while executing
+# "::.windowmgr ShowWindowType wave"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval $vsimPriv(windowmgr) ShowWindowType $window_type"
+# Error in macro ./uw_tmp/uw-sim.tcl line 26
+# Macro Break
+#     while executing
+# "::.windowmgr ShowWindowType wave"
+#     ("eval" body line 1)
+#     invoked from within
+# "eval $vsimPriv(windowmgr) ShowWindowType $window_type"
+#     while executing
+# "view $winType"
+#     (procedure "findWindowFast" line 11)
+#     invoked from within
+# "findWindowFast wave $args "
+#     (procedure "::add::wave" line 62)
+#     invoked from within
+# "add wave sim:/kirsch_tb/clock"
+#     (file "kirsch_tb.sim" line 1)
+#     invoked from within
+# "source kirsch_tb.sim"
+#     invoked from within
+# "if { "kirsch_tb.sim" ne "" } {
+#   source kirsch_tb.sim
+# }"
