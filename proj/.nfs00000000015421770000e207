@@ -13,9 +13,9 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# vsim -lib work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g/kirsch_tb/period=20 -wlf uw_tmp/vsim.wlf -t 1ns -do "uw_tmp/uw-sim.tcl" kirsch_tb(main) 
-# Start time: 18:10:54 on Mar 23,2016
-# ** Note: (vsim-3812) Design is being optimized...
+# vsim -lib work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g/kirsch_tb/period=20 -wlf uw_tmp/vsim.wlf -t 1ns -do "uw_tmp/uw-sim.tcl" kirsch_tb 
+# Start time: 14:24:42 on Mar 24,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -25,6 +25,7 @@
 # Loading work.string_pkg(body)
 # Loading work.kirsch_unsynth_pkg(body)
 # Loading work.state_pkg
+# Loading work.max_pkg
 # Loading work.kirsch_tb(main)#1
 # Loading work.kirsch(main)#1
 # Loading work.mem(main)#1
@@ -33,16 +34,6 @@
 # ** Warning: (vsim-8683) Uninitialized out port /kirsch_tb/uut/o_edge has no driver.
 # This port will contribute value (U) to the signal network.
 # do uw_tmp/uw-sim.tcl
-# ** Error: Unable to lock WLF file "uw_tmp/vsim.wlf". Retrying 1 times, errno 11
-# ** Error: Unable to lock WLF file "uw_tmp/vsim.wlf". Retrying 2 times, errno 11
-# ** Error: Unable to lock WLF file "uw_tmp/vsim.wlf". Retrying 3 times, errno 11
-# ** Error: Cannot lock WLF file: "uw_tmp/vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: uw_tmp/vsim.wlf
-#           File in use by: lpavlovi  Hostname: ecelinux5.uwaterloo.ca  ProcessID: 29330
-#           Attempting to use alternate WLF file "uw_tmp/wlftPoPQSM".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: uw_tmp/vsim.wlf
-#           Using alternate file: uw_tmp/wlftPoPQSM
 # ** Note: XXXXXXXXXXXX reading image from tests/test1.txt
 #    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

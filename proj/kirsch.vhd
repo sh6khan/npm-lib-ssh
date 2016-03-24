@@ -16,6 +16,20 @@ use ieee.numeric_std.all;
 use work.state_pkg.all;
 use work.kirsch_synth_pkg.all;
 
+package max_pkg is
+type max_record is record
+    direction  : direction_ty;
+    magnitude  : std_logic_vector(9 downto 0);
+  end record max_record;  
+end max_pkg;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.kirsch_synth_pkg.all;
+use work.state_pkg.all;
+use work.max_pkg.all;
+
 entity kirsch is
   port(
     ------------------------------------------
@@ -76,6 +90,15 @@ architecture main of kirsch is
          d, e, f,
          g, h, i    : std_logic_vector(7 downto 0);
 
+  -- inputs
+  signal i1 : unsigned(7 downto 0);
+  signal i2 : unsigned(7 downto 0);
+  signal i3 : unsigned(7 downto 0);
+  signal i4 : unsigned(7 downto 0);
+
+  -- memory
+  signal valid_bits : valid_bit_ty;
+
   signal register_1 : unsigned(8 downto 0);
   signal register_2 : unsigned(8 downto 0);
   signal register_3 : unsigned(8 downto 0);
@@ -117,7 +140,6 @@ begin
                q        => mem_out(i)
              );
   end generate MEMORY_ARRAY_GEN;
-
     valid_pixel: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
@@ -132,21 +154,45 @@ begin
       end if;
     end process;
 
+    on_to_the_next_state: process begin
+        wait until rising_edge(i_clock);
+
+        -- reset to the initial state 
+        if( i_reset = '1') then
+            valid_bits <= initial_valid_bit;
+        else
+            -- shift all of the bits down
+            valid_bits(3 downto 1) <= valid_bits(2 downto 0);
+            -- set the first bit to 1 when i_valid is high
+            valid_bits(0) <= i_valid;
+        end if;
+    end process;
+
+    i1 <= unsigned(g) when valid_bits(0) = '1' else 
+          unsigned(a) when valid_bits(1) = '1' else
+          unsigned(c) when valid_bits(2) = '1' else
+          unsigned(e) when valid_bits(3) = '1';
+
+    i2 <= unsigned(b) when valid_bits(0) = '1' else 
+          unsigned(d) when valid_bits(1) = '1' else
+          unsigned(f) when valid_bits(2) = '1' else
+          unsigned(h) when valid_bits(3) = '1';
+
+    i3 <= unsigned(a) when valid_bits(0) = '1' else 
+          unsigned(b) when valid_bits(1) = '1' else
+          unsigned(d) when valid_bits(2) = '1' else
+          unsigned(f) when valid_bits(3) = '1';
+
+    i4 <= unsigned(h) when valid_bits(0) = '1' else 
+          unsigned(c) when valid_bits(1) = '1' else
+          unsigned(e) when valid_bits(2) = '1' else
+          unsigned(g) when valid_bits(3) = '1';
+
+
   increment_conv_table: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
         -- clear all of the values
-        -- a <= "00000000";
-        -- b <= "00000000";
-        -- c <= "00000000";
--- 
-        -- d <= "00000000";
-        -- e <= "00000000";
-        -- f <= "00000000";
--- 
-        -- g <= "00000000";
-        -- h <= "00000000";
-        -- i <= "00000000";
         conv_table(0)(0) <= "00000000";
         conv_table(1)(0) <= "00000000";
 
