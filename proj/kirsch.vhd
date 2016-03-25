@@ -96,7 +96,6 @@ architecture main of kirsch is
 
   -- memory
   signal valid_bits_stage1 : valid_bit_ty;
-  signal valid_bits_stage2 : valid_bit_ty;
 
   -- registers
   signal r1 : unsigned(10 downto 0);    -- 11 bits
@@ -114,6 +113,12 @@ architecture main of kirsch is
   signal add1 : unsigned(8 downto 0);   -- 9 bits
   signal add2 : max_record;   -- 10 bits
   signal add3 : unsigned(10 downto 0);  -- 11 bits
+  signal add4 : unsigned(12 downto 0);  -- 13 bits
+  
+  --subtraction
+  signal sub1 : unsigned(12 downto 0); 
+  
+
 
   -- A function to rotate left (rol) a vector by n bits
   function "rol" ( a : std_logic_vector; n : natural )
@@ -159,6 +164,7 @@ begin
                q        => mem_out(i)
              );
   end generate MEMORY_ARRAY_GEN;
+    
     valid_pixel: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
@@ -179,48 +185,43 @@ begin
         -- reset to the initial state 
         if( i_reset = '1') then
             valid_bits_stage1 <= initial_valid_bit;
-            valid_bits_stage2 <= initial_valid_bit;
-            -- valid_bits_stage2 <= "000";
         else
             -- shift all of the bits down
             valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
-            valid_bits_stage2(3 downto 1) <= valid_bits_stage2(2 downto 0);
-            -- valid_bits_stage2(2 downto 1) <= valid_bits_stage2(1 downto 0);
             -- set the first bit to 1 when i_valid is high
             valid_bits_stage1(0) <= i_valid;
-            valid_bits_stage2(0) <= valid_bits_stage1(3);
         end if;
     end process;
 
     i1.magnitude <= ("00" & unsigned(g)) when valid_bits_stage1(0) = '1' else 
           ("00" & unsigned(a)) when valid_bits_stage1(1) = '1' else
           ("00" & unsigned(c)) when valid_bits_stage1(2) = '1' else
-          ("00" & unsigned(e)) when valid_bits_stage1(3) = '1';
+          ("00" & unsigned(e));
 
     i2.magnitude <= ("00" & unsigned(b)) when valid_bits_stage1(0) = '1' else 
           ("00" & unsigned(d)) when valid_bits_stage1(1) = '1' else
           ("00" & unsigned(f)) when valid_bits_stage1(2) = '1' else
-          ("00" & unsigned(h)) when valid_bits_stage1(3) = '1';
+          ("00" & unsigned(h));
 
     i1.direction <= dir_w when valid_bits_stage1(0) = '1' else 
           dir_n when valid_bits_stage1(1) = '1' else
           dir_e when valid_bits_stage1(2) = '1' else
-          dir_s when valid_bits_stage1(3) = '1';
+          dir_s;
 
     i2.direction <= dir_nw when valid_bits_stage1(0) = '1' else 
           dir_ne  when valid_bits_stage1(1) = '1' else
           dir_se  when valid_bits_stage1(2) = '1' else
-          dir_sw  when valid_bits_stage1(3) = '1';
+          dir_sw;
 
     i3 <= unsigned(a) when valid_bits_stage1(0) = '1' else 
           unsigned(b) when valid_bits_stage1(1) = '1' else
           unsigned(d) when valid_bits_stage1(2) = '1' else
-          unsigned(f) when valid_bits_stage1(3) = '1';
+          unsigned(f);
 
     i4 <= unsigned(h) when valid_bits_stage1(0) = '1' else 
           unsigned(c) when valid_bits_stage1(1) = '1' else
           unsigned(e) when valid_bits_stage1(2) = '1' else
-          unsigned(g) when valid_bits_stage1(3) = '1';
+          unsigned(g);
 
   register1_proc: process begin
       wait until rising_edge(i_clock);
@@ -270,13 +271,19 @@ begin
   add2.direction <= max1.direction;
 
   add3 <= ("00" & add1) + r1;
+  
+  add4 <= ("00" & r4) + ('0' & (r4 sll 1));
+
+  sub1 <= 383 + r6;
 
   register4_proc: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r4 <= to_unsigned(0, 11);
-      else
+      elsif (valid_bits_stage1(3) = '1') then
             r4 <= add3;
+      else
+            r4 <= r4;
       end if;
   end process;
 
@@ -285,7 +292,7 @@ begin
       if( i_reset = '1') then
             r5.magnitude <= to_unsigned(0, 10);
             r5.direction <= "000";
-      elsif(valid_bits_stage2(0) = '1') then
+      elsif(valid_bits_stage1(0) = '1') then
             r5.magnitude <= max2.magnitude;
             r5.direction <= max2.direction;
       else
@@ -298,8 +305,10 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r6 <= to_unsigned(0, 13);
-      else
-            r6 <= ("00" & r4) + ('0' & (r4 sll 1));
+      elsif (valid_bits_stage1(1) = '1') then 
+            r6 <= add4;
+      else 
+            r6 <= r6;
       end if;
   end process;
 
@@ -307,21 +316,23 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r7 <= to_unsigned(0, 13);
-      else
+      elsif (valid_bits_stage1(1) = '1') then 
             r7 <= ("000" & r5.magnitude) sll 3;
+      else 
+            r7 <= r7;
       end if;
   end process;
 
   register8_proc: process begin
       wait until rising_edge(i_clock);
-      if(valid_bits_stage2(2) = '1') and ((r7 - r6) > 383) then
+      if ((valid_bits_stage1(2) = '1') and ((r7 > sub1))) then
           r_edge <= '1';
       else
           r_edge <= '0';
       end if;
   end process;
 
-  o_valid <= valid_bits_stage2(3); -- r_edge;
+  o_valid <= valid_bits_stage1(3); -- r_edge;
   o_dir <= r5.direction and (2 downto 0 => r_edge); 
   o_edge <= r_edge;
   -- o_col <= pixel_counter(7 downto 0);
