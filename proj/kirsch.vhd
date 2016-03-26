@@ -102,7 +102,7 @@ architecture main of kirsch is
   signal r1 : unsigned(10 downto 0);    -- 11 bits
   signal r2 : max_record;     -- 10 bits 
   signal r3 : max_record;     -- 10 bits - same as add2
-  signal r4 : unsigned(10 downto 0);
+  signal r4 : unsigned(12 downto 0);
   signal r5 : max_record;
   signal r6 : unsigned(12 downto 0);
   signal r7 : unsigned(12 downto 0);
@@ -117,7 +117,7 @@ architecture main of kirsch is
   signal add4 : unsigned(12 downto 0);  -- 13 bits
   
   --subtraction
-  signal sub1 : unsigned(12 downto 0); 
+  signal sub1 : unsigned(13 downto 0); 
   
 
 
@@ -182,18 +182,22 @@ begin
 
     on_to_the_next_state: process begin
         wait until rising_edge(i_clock);
+        -- shift all of the bits down
+        valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
+        valid_bits_stage2(3 downto 1) <= valid_bits_stage2(2 downto 0);
+        valid_bits_stage2(0) <= valid_bits_stage1(3);
 
         -- reset to the initial state 
         if( i_reset = '1') or (pixel_counter <= 513) then
             valid_bits_stage1 <= initial_valid_bit;
             valid_bits_stage2 <= initial_valid_bit;
         else
-            -- shift all of the bits down
-            valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
-            valid_bits_stage2(3 downto 1) <= valid_bits_stage2(2 downto 0);
-            -- set the first bit to 1 when i_valid is high
-            valid_bits_stage1(0) <= i_valid;
-            valid_bits_stage2(0) <= valid_bits_stage1(3);
+            if( i_valid = '1' and pixel_counter(15 downto 9) >= 1 and pixel_counter(7 downto 1) >= 1) then
+                -- set the first bit to 1 when i_valid is high
+                valid_bits_stage1(0) <= '1';
+            else 
+                valid_bits_stage1(0) <= '0';
+            end if;
         end if;
     end process;
 
@@ -276,16 +280,16 @@ begin
 
   add3 <= ("00" & add1) + r1;
   
-  add4 <= ("00" & r4) + ('0' & (r4 sll 1));
+  add4 <= r4 + r4 sll 1;
 
-  sub1 <= 383 + r6;
+  sub1 <= 383 + ('0' & r6);
 
   register4_proc: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
-            r4 <= to_unsigned(0, 11);
+            r4 <= to_unsigned(0, 13);
       elsif (valid_bits_stage1(3) = '1') then
-            r4 <= add3;
+            r4 <= ("00" & add3);
       else
             r4 <= r4;
       end if;
