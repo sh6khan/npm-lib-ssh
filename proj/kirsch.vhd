@@ -19,7 +19,7 @@ use work.kirsch_synth_pkg.all;
 package max_pkg is
 type max_record is record
     direction  : direction_ty;
-    magnitude  : unsigned(9 downto 0);
+    magnitude  : unsigned(10 downto 0);
   end record max_record;  
 end max_pkg;
 
@@ -105,7 +105,7 @@ architecture main of kirsch is
   signal r4 : unsigned(12 downto 0);
   signal r5 : max_record;
   signal r6 : unsigned(12 downto 0);
-  signal r7 : unsigned(12 downto 0);
+  signal r7 : unsigned(13 downto 0);
   signal r8 : unsigned(12 downto 0); -- output
 
   signal r_edge : std_logic;
@@ -201,15 +201,15 @@ begin
         end if;
     end process;
 
-    i1.magnitude <= ("00" & unsigned(g)) when valid_bits_stage1(0) = '1' else 
-          ("00" & unsigned(a)) when valid_bits_stage1(1) = '1' else
-          ("00" & unsigned(c)) when valid_bits_stage1(2) = '1' else
-          ("00" & unsigned(e));
+    i1.magnitude <= ("000" & unsigned(g)) when valid_bits_stage1(0) = '1' else 
+          ("000" & unsigned(a)) when valid_bits_stage1(1) = '1' else
+          ("000" & unsigned(c)) when valid_bits_stage1(2) = '1' else
+          ("000" & unsigned(e));
 
-    i2.magnitude <= ("00" & unsigned(b)) when valid_bits_stage1(0) = '1' else 
-          ("00" & unsigned(d)) when valid_bits_stage1(1) = '1' else
-          ("00" & unsigned(f)) when valid_bits_stage1(2) = '1' else
-          ("00" & unsigned(h));
+    i2.magnitude <= ("000" & unsigned(b)) when valid_bits_stage1(0) = '1' else 
+          ("000" & unsigned(d)) when valid_bits_stage1(1) = '1' else
+          ("000" & unsigned(f)) when valid_bits_stage1(2) = '1' else
+          ("000" & unsigned(h));
 
     i1.direction <= dir_w when valid_bits_stage1(0) = '1' else 
           dir_n when valid_bits_stage1(1) = '1' else
@@ -248,7 +248,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r2.direction <= "000";
-            r2.magnitude <= to_unsigned(0, 10);
+            r2.magnitude <= to_unsigned(0, 11);
       else
         if(valid_bits_stage1(1) = '1') then
             r2.direction <= r3.direction;
@@ -264,7 +264,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r3.direction <= "000";
-            r3.magnitude <= to_unsigned(0, 10);
+            r3.magnitude <= to_unsigned(0, 11);
       else
             r3.direction <= add2.direction;
             r3.magnitude <= add2.magnitude;
@@ -280,7 +280,7 @@ begin
 
   add3 <= ("00" & add1) + r1;
   
-  add4 <= r4 + r4 sll 1;
+  add4 <= r4 + (r4 sll 1);
 
   sub1 <= 383 + ('0' & r6);
 
@@ -298,9 +298,9 @@ begin
   register5_proc: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
-            r5.magnitude <= to_unsigned(0, 10);
+            r5.magnitude <= to_unsigned(0, 11);
             r5.direction <= "000";
-      elsif(valid_bits_stage1(0) = '1') then
+      elsif(valid_bits_stage2(0) = '1') then
             r5.magnitude <= max2.magnitude;
             r5.direction <= max2.direction;
       else
@@ -313,7 +313,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r6 <= to_unsigned(0, 13);
-      elsif (valid_bits_stage1(1) = '1') then 
+      elsif (valid_bits_stage2(1) = '1') then 
             r6 <= add4;
       else 
             r6 <= r6;
@@ -323,7 +323,7 @@ begin
   register7_proc: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
-            r7 <= to_unsigned(0, 13);
+            r7 <= to_unsigned(0, 14);
       elsif (valid_bits_stage2(1) = '1') then 
             r7 <= ("000" & r5.magnitude) sll 3;
       else 
