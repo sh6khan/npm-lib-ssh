@@ -96,6 +96,7 @@ architecture main of kirsch is
 
   -- memory
   signal valid_bits_stage1 : valid_bit_ty;
+  signal valid_bits_stage2 : valid_bit_ty;
 
   -- registers
   signal r1 : unsigned(10 downto 0);    -- 11 bits
@@ -183,13 +184,16 @@ begin
         wait until rising_edge(i_clock);
 
         -- reset to the initial state 
-        if( i_reset = '1') then
+        if( i_reset = '1') or (pixel_counter <= 513) then
             valid_bits_stage1 <= initial_valid_bit;
+            valid_bits_stage2 <= initial_valid_bit;
         else
             -- shift all of the bits down
             valid_bits_stage1(3 downto 1) <= valid_bits_stage1(2 downto 0);
+            valid_bits_stage2(3 downto 1) <= valid_bits_stage2(2 downto 0);
             -- set the first bit to 1 when i_valid is high
             valid_bits_stage1(0) <= i_valid;
+            valid_bits_stage2(0) <= valid_bits_stage1(3);
         end if;
     end process;
 
@@ -316,7 +320,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r7 <= to_unsigned(0, 13);
-      elsif (valid_bits_stage1(1) = '1') then 
+      elsif (valid_bits_stage2(1) = '1') then 
             r7 <= ("000" & r5.magnitude) sll 3;
       else 
             r7 <= r7;
@@ -325,14 +329,14 @@ begin
 
   register8_proc: process begin
       wait until rising_edge(i_clock);
-      if ((valid_bits_stage1(2) = '1') and ((r7 > sub1))) then
+      if ((valid_bits_stage2(2) = '1') and ((r7 > sub1))) then
           r_edge <= '1';
       else
           r_edge <= '0';
       end if;
   end process;
 
-  o_valid <= valid_bits_stage1(3); -- r_edge;
+  o_valid <= valid_bits_stage2(3); -- r_edge;
   o_dir <= r5.direction and (2 downto 0 => r_edge); 
   o_edge <= r_edge;
   -- o_col <= pixel_counter(7 downto 0);

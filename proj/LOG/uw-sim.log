@@ -1,4 +1,4 @@
-uw-sim /opt-src/CMC/local/maagaard/ece327/bin/uw-sim kirsch.uwp
+uw-sim /opt-src/CMC/local/maagaard/ece327/bin/uw-sim -Gtest_num=2 kirsch.uwp
 INFO: Using testbench        : kirsch_tb
 INFO: Using design entity    : kirsch
 INFO: Using simulation script: kirsch_tb.sim
@@ -24,7 +24,7 @@ vmap cycloneii /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii
 Modifying modelsim.ini
 
 QuestaSim vcom 10.4a Compiler 2015.03 Mar 24 2015
-Start time: 17:49:52 on Mar 24,2016
+Start time: 22:38:43 on Mar 25,2016
 vcom -93 "+acc" -work work-msim mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -63,8 +63,8 @@ vcom -93 "+acc" -work work-msim mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_p
 -- Compiling architecture main of kirsch_tb
 -- Loading package max_pkg
 -- Loading entity kirsch
-End time: 17:49:53 on Mar 24,2016, Elapsed time: 0:00:01
+End time: 22:38:43 on Mar 25,2016, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 
 Reading pref.tcl
-INFO: Keyboard interrupt when running `vsim -lib work-msim  -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii   -g/kirsch_tb/period=20   -wlf uw_tmp/vsim.wlf -t 1ns -do uw_tmp/uw-sim.tcl kirsch_tb'
+INFO: Keyboard interrupt when running `vsim -lib work-msim  -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii   -g/kirsch_tb/test_num=2 -g/kirsch_tb/period=20   -wlf uw_tmp/vsim.wlf -t 1ns -do uw_tmp/uw-sim.tcl kirsch_tb'

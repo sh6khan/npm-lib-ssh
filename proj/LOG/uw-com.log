@@ -1,0 +1,2 @@
+ERROR: could not find path for vmap
+ERROR: Failure(2) when running `vmap -c'
