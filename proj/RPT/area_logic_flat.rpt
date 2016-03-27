@@ -1,0 +1,54 @@
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux lpavlovi@ecelinux5.uwaterloo.ca #1 SMP PREEMPT Sun Feb 14 10:43:50 EST 2016 3.2.77-1.el5.elrepo x86_64
+//  
+//  Start time Sat Mar 26 22:52:49 2016
+
+***************************************************************
+Device Utilization for EP2C35F672C
+***************************************************************
+Resource                          Used    Avail   Utilization
+---------------------------------------------------------------
+IOs                               95      -            -
+LUTs                              275     33216     0.83%
+Registers                         189     33216     0.57%
+Memory Bits                       6144    483840    1.27%
+DSP block 9-bit elems             0       70        0.00%
+---------------------------------------------------------------
+
+*******************************************
+
+Library: work    Cell: kirsch    View: main
+
+*******************************************
+
+  Cell                     Library  References     Total Area
+
+ GND                       cycloneii     1 x
+ NOT                       cycloneii     1 x
+ TRI                       cycloneii    48 x      1     48 TRIs
+ VCC                       cycloneii     5 x
+ altsyncram_8_8_256_2_0    OPERATORS     1 x
+ altsyncram_8_8_256_2_1    OPERATORS     1 x
+ altsyncram_8_8_256_2_2    OPERATORS     1 x
+ cycloneii_lcell_comb      cycloneii   275 x      1    275 LUTs
+ cycloneii_lcell_ff        cycloneii   189 x      1    189 Registers
+
+ Number of ports :                      95
+ Number of nets :                      614
+ Number of instances :                 522
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of LCs :                         0
+ Number of LUTs :                      275
+ Number of Memory Bits :              6144
+ Number of Registers :                 189
+ Number of TRIs :                       48
+ Number of accumulated instances :     522

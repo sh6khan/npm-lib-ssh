@@ -5,9 +5,9 @@ source /opt-src/CMC/local/maagaard/ece327/lib/lib-msim.tcl
 
 proc reload {} {
 
-  # vcom -93 +acc -work work-msim mem.vhd kirsch_synth_pkg.vhd kirsch.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd
+  # vcom -93 +acc -work work-msim uw_tmp/kirsch_chip.v uw_tmp/kirsch_chip.vhd string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd
 
-  foreach file [concat {  } { mem.vhd kirsch_synth_pkg.vhd kirsch.vhd } { string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd }] {
+  foreach file [concat {  } { uw_tmp/kirsch_chip.v uw_tmp/kirsch_chip.vhd } { string_pkg.vhd kirsch_synth_pkg.vhd kirsch_unsynth_pkg.vhd kirsch_tb.vhd }] {
     echo "INFO: compiling $file"
     set ext [file extension $file]
     if [regexp -nocase ".v(|lg|o)$" $ext] {

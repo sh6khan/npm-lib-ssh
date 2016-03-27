@@ -13,36 +13,10 @@ add wave -radix unsigned sim:/kirsch_tb/uut/pixel_counter
 add wave -radix unsigned sim:/kirsch_tb/uut/row_index
 add wave -radix unsigned sim:/kirsch_tb/uut/mem_out
 
+add wave sim:/kirsch_tb/uut/last_pixel_complete
+
 add wave sim:/kirsch_tb/uut/valid_bits_stage2
 add wave sim:/kirsch_tb/uut/valid_bits_stage1
-
-add wave -radix unsigned sim:/kirsch_tb/uut/i1
-add wave -radix unsigned sim:/kirsch_tb/uut/i2
-add wave -radix unsigned sim:/kirsch_tb/uut/i3
-add wave -radix unsigned sim:/kirsch_tb/uut/i4
-
-add wave -radix unsigned sim:/kirsch_tb/uut/max1
-add wave -radix unsigned sim:/kirsch_tb/uut/max2
-
-add wave -radix unsigned sim:/kirsch_tb/uut/r1
-add wave -radix unsigned sim:/kirsch_tb/uut/r2
-add wave -radix unsigned sim:/kirsch_tb/uut/r3
-add wave -radix unsigned sim:/kirsch_tb/uut/r4
-add wave -radix unsigned sim:/kirsch_tb/uut/r5
-add wave -radix unsigned sim:/kirsch_tb/uut/r6
-add wave -radix unsigned sim:/kirsch_tb/uut/r7
-
-add wave -radix unsigned sim:/kirsch_tb/uut/c
-add wave -radix unsigned sim:/kirsch_tb/uut/d
-add wave -radix unsigned sim:/kirsch_tb/uut/e
-
-add wave -radix unsigned sim:/kirsch_tb/uut/b
-add wave -radix unsigned sim:/kirsch_tb/uut/i
-add wave -radix unsigned sim:/kirsch_tb/uut/f
-
-add wave -radix unsigned sim:/kirsch_tb/uut/a
-add wave -radix unsigned sim:/kirsch_tb/uut/h
-add wave -radix unsigned sim:/kirsch_tb/uut/g
 
 run 10600000 ns
 

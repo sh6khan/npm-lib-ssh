@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="kirsch">
+		<CBX_INST_ENTRY INSTANCE_NAME="|kirsch|ram_dq_8_0:mem|altsyncram:ix64056z29481" CBX_FILE_NAME="altsyncram_jpg2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|kirsch|ram_dq_8_1:mem_0|altsyncram:ix64056z29482" CBX_FILE_NAME="altsyncram_jpg2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|kirsch|ram_dq_8_2:mem_1|altsyncram:ix64056z29483" CBX_FILE_NAME="altsyncram_jpg2.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

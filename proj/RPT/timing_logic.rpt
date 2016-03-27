@@ -1,0 +1,27 @@
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	ClockDomain0            i_clock                               6.972 (143.431 MHz)           20.000 (50.000 MHz)
+
+Setup Slack Path Summary
+
+               Data                                                                               Data
+       Setup   Path   Source    Dest.                                                             End 
+Index  Slack   Delay   Clock    Clock          Data Start Pin                Data End Pin         Edge
+-----  ------  -----  -------  -------  ----------------------------  --------------------------  ----
+  1    13.028  6.876  i_clock  i_clock  reg_valid_bits_stage1(2)/clk  reg_r3_magnitude(9)/datain  Rise
+  2    13.051  6.853  i_clock  i_clock  reg_valid_bits_stage1(1)/clk  reg_r3_magnitude(9)/datain  Rise
+  3    13.251  6.653  i_clock  i_clock  reg_valid_bits_stage1(0)/clk  reg_r3_magnitude(9)/datain  Rise
+  4    14.338  5.566  i_clock  i_clock  reg_conv_table(1)(0)(0)/clk   reg_r3_magnitude(9)/datain  Rise
+  5    14.358  5.546  i_clock  i_clock  reg_conv_table(0)(1)(0)/clk   reg_r3_magnitude(9)/datain  Rise
+
+-- Device: Altera - Cyclone II : EP2C35F672C : 7
+-- CTE report summary..
+                  CTE Report Summary
+
+Analyzing setup constraint violations 
+End CTE Report Summary ..... CPU Time Used: 0 sec.

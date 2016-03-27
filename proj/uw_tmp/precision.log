@@ -1,0 +1,136 @@
+# Info: [9566]: Logging session transcript to file /home/lpavlovi/ece327/npm-lib-ssh/proj/precision.log
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux lpavlovi@ecelinux5.uwaterloo.ca #1 SMP PREEMPT Sun Feb 14 10:43:50 EST 2016 3.2.77-1.el5.elrepo x86_64
+//  
+//  Start time Sat Mar 26 22:52:49 2016
+# -------------------------------------------------
+# Info: [9566]: Logging session transcript to file /home/lpavlovi/ece327/npm-lib-ssh/proj/precision.log
+# Info: [9575]: The Results Directory has been set to: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp
+# Info: [9569]: Moving session transcript to file /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/precision.log
+# Info: [15298]: Setting up the design to use synthesis library "cycloneii.syn"
+# Info: [574]: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+# Info: [15324]: Setting Part to: "EP2C35F672C".
+# Info: [15325]: Setting Process to: "7".
+# Info: USING DESIGN ARCH
+# Info: [3022]: Reading file: /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+# Info: [633]: Loading library initialization file /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+# Info: [40000]: vhdlorder, Release 2015b.13
+# Info: [40000]: Files sorted successfully.
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2015b.13
+# Info: [42502]: Analyzing input file "/home/lpavlovi/ece327/npm-lib-ssh/proj/mem.vhd" ...
+# Info: [42502]: Analyzing input file "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch_synth_pkg.vhd" ...
+# Info: [42502]: Analyzing input file "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd" ...
+# Info: [656]: Current working directory: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 14:33:45
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 15:06:12
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module work.kirsch(main): Pre-processing...
+# Info: [44506]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
+# Info: [45251]: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
+# Warning: [45729]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 48: Input port debug_key has never been used.
+# Warning: [45729]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 49: Input port debug_switch has never been used.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 50: Output port debug_led_red has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 51: Output port debug_led_grn has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 52: Output port debug_num_0 has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 53: Output port debug_num_1 has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 54: Output port debug_num_2 has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 55: Output port debug_num_3 has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 56: Output port debug_num_4 has never been assigned a value.
+# Warning: [45731]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 57: Output port debug_num_5 has never been assigned a value.
+# Info: [44508]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
+# Info: [44523]: Root Module work.kirsch(main): Compiling...
+# Info: [44838]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 188: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_17" inferred for node "pixel_counter".
+# Info: [45309]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 301: Optimizing state bit(s) r4[12:11] to constant 0
+# Info: [45309]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 337: Optimizing state bit(s) r7[13] to constant 0
+# Info: [45309]: "/home/lpavlovi/ece327/npm-lib-ssh/proj/kirsch.vhd", line 337: Optimizing state bit(s) r7[2:0] to constant 0
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 1, Inferred (Modgen/Selcounter/AddSub) : 1 (1 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 553.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 0.0 secs.
+# Info: [656]: Current working directory: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp.
+# Info: [15330]: Doing rtl optimizations.
+# Info: [659]: Finished compiling design.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch_gate.vhd.
+# Info: Info, Command 'auto_write' finished successfully
+# Info: [656]: Current working directory: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp.
+# Info: [20013]: Precision will use 5 processor(s).
+# Info: [15002]: Optimizing design view:.work.kirsch.main
+# Warning: [1621]: Port debug_led_red(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(4) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(5) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(6) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(7) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(8) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(9) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(10) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(11) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(12) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(13) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(14) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(15) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(16) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_red(17) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(4) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_led_grn(5) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_0(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_0(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_0(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_0(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_1(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_1(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_1(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_1(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_2(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_2(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_2(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_2(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_3(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_3(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_3(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_3(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_4(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_4(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_4(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_4(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_5(0) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_5(1) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_5(2) is connected to a disabled tristate, possibly unconnected Port in design.
+# Warning: [1621]: Port debug_num_5(3) is connected to a disabled tristate, possibly unconnected Port in design.
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.vhd.
+# Info: Info, Writing xrf file '/home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.xrf'
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.xrf.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.v.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.xrf.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.vqm.
+# Info: [3027]: Writing file: /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.xrf.
+# Info: -- Writing file /home/lpavlovi/ece327/npm-lib-ssh/proj/uw_tmp/kirsch.tcl
+# Info: exq_pr_compile_project gen_vcf kirsch 1
+# Info: [659]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 2.2 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.0 s secs.
+# Info: i_clock
+# Info: 1
+# Info: 0
+# Info: *** logic synthesis succeeded ***

@@ -19,7 +19,7 @@ use work.kirsch_synth_pkg.all;
 package max_pkg is
 type max_record is record
     direction  : direction_ty;
-    magnitude  : unsigned(10 downto 0);
+    magnitude  : unsigned(9 downto 0);
   end record max_record;  
 end max_pkg;
 
@@ -43,7 +43,6 @@ entity kirsch is
     o_dir      : out std_logic_vector(2 downto 0);                      
     o_mode     : out std_logic_vector(1 downto 0);
     o_row      : out std_logic_vector(7 downto 0);
-    -- o_col      : out std_logic_vector(7 downto 0);
     ------------------------------------------
     -- debugging inputs and outputs
     debug_key      : in  std_logic_vector( 3 downto 1) ; 
@@ -73,6 +72,7 @@ architecture main of kirsch is
 
   -- number of valid pixels; covers the entire 256 x 256 grid
   signal pixel_counter : unsigned(16 downto 0);
+  signal last_pixel_complete: std_logic_vector(1 downto 0);
 
   -- memory
   signal row_index  : row_state_ty;
@@ -81,9 +81,8 @@ architecture main of kirsch is
 
   -- conv table
   signal conv_table : mem_grid;
-  signal a, b, c,
-         d, e, f,
-         g, h, i    : std_logic_vector(7 downto 0);
+  signal a, b, c, d,
+         e, f, g, h : std_logic_vector(7 downto 0);
 
   -- inputs
   signal i1 : max_record;
@@ -106,18 +105,17 @@ architecture main of kirsch is
   signal r5 : max_record;
   signal r6 : unsigned(12 downto 0);
   signal r7 : unsigned(13 downto 0);
-  signal r8 : unsigned(12 downto 0); -- output
+  -- signal r8 : unsigned(12 downto 0); -- output
 
   signal r_edge : std_logic;
+  signal r_mode : std_logic_vector(1 downto 0);
 
   -- addition
   signal add1 : unsigned(8 downto 0);   -- 9 bits
   signal add2 : max_record;   -- 10 bits
   signal add3 : unsigned(10 downto 0);  -- 11 bits
   signal add4 : unsigned(12 downto 0);  -- 13 bits
-  
-  --subtraction
-  signal sub1 : unsigned(13 downto 0); 
+  signal add5 : unsigned(13 downto 0); 
   
 
 
@@ -143,15 +141,15 @@ architecture main of kirsch is
 
 begin
 
-  debug_num_5 <= X"E";
-  debug_num_4 <= X"C";
-  debug_num_3 <= X"E";
-  debug_num_2 <= X"3";
-  debug_num_1 <= X"2";
-  debug_num_0 <= X"7";
+  -- debug_num_5 <= X"E";
+  -- debug_num_4 <= X"C";
+  -- debug_num_3 <= X"E";
+  -- debug_num_2 <= X"3";
+  -- debug_num_1 <= X"2";
+  -- debug_num_0 <= X"7";
 
-  debug_led_red <= (others => '0');
-  debug_led_grn <= (others => '0');
+  -- debug_led_red <= (others => '0');
+  -- debug_led_grn <= (others => '0');
   
   -- Generate the memory array
   MEMORY_ARRAY_GEN : for i in 0 to 2 generate
@@ -168,8 +166,23 @@ begin
     
     valid_pixel: process begin
       wait until rising_edge(i_clock);
+
+      if (pixel_counter(16) = '1' and valid_bits_stage1(3) = '1') then
+        last_pixel_complete(0) <= '1';
+      else
+        last_pixel_complete(0) <= last_pixel_complete(0);
+      end if;
+
+      if (last_pixel_complete(0) = '1' and valid_bits_stage2(3) = '1') then
+        last_pixel_complete(1) <= '1';
+      else
+        last_pixel_complete(1) <= last_pixel_complete(1);
+      end if;
+
       if( i_reset = '1') then
         row_index <= initial_row_state;
+        last_pixel_complete(0) <= '0';
+        last_pixel_complete(1) <= '0';
         pixel_counter <= to_unsigned(0, 17);
       elsif( i_valid = '1') then
         pixel_counter <= pixel_counter + 1;
@@ -201,15 +214,15 @@ begin
         end if;
     end process;
 
-    i1.magnitude <= ("000" & unsigned(g)) when valid_bits_stage1(0) = '1' else 
-          ("000" & unsigned(a)) when valid_bits_stage1(1) = '1' else
-          ("000" & unsigned(c)) when valid_bits_stage1(2) = '1' else
-          ("000" & unsigned(e));
+    i1.magnitude <= ("00" & unsigned(g)) when valid_bits_stage1(0) = '1' else 
+          ("00" & unsigned(a)) when valid_bits_stage1(1) = '1' else
+          ("00" & unsigned(c)) when valid_bits_stage1(2) = '1' else
+          ("00" & unsigned(e));
 
-    i2.magnitude <= ("000" & unsigned(b)) when valid_bits_stage1(0) = '1' else 
-          ("000" & unsigned(d)) when valid_bits_stage1(1) = '1' else
-          ("000" & unsigned(f)) when valid_bits_stage1(2) = '1' else
-          ("000" & unsigned(h));
+    i2.magnitude <= ("00" & unsigned(b)) when valid_bits_stage1(0) = '1' else 
+          ("00" & unsigned(d)) when valid_bits_stage1(1) = '1' else
+          ("00" & unsigned(f)) when valid_bits_stage1(2) = '1' else
+          ("00" & unsigned(h));
 
     i1.direction <= dir_w when valid_bits_stage1(0) = '1' else 
           dir_n when valid_bits_stage1(1) = '1' else
@@ -248,7 +261,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r2.direction <= "000";
-            r2.magnitude <= to_unsigned(0, 11);
+            r2.magnitude <= to_unsigned(0, 10);
       else
         if(valid_bits_stage1(1) = '1') then
             r2.direction <= r3.direction;
@@ -264,7 +277,7 @@ begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
             r3.direction <= "000";
-            r3.magnitude <= to_unsigned(0, 11);
+            r3.magnitude <= to_unsigned(0, 10);
       else
             r3.direction <= add2.direction;
             r3.magnitude <= add2.magnitude;
@@ -282,7 +295,7 @@ begin
   
   add4 <= r4 + (r4 sll 1);
 
-  sub1 <= 383 + ('0' & r6);
+  add5 <= 383 + ('0' & r6);
 
   register4_proc: process begin
       wait until rising_edge(i_clock);
@@ -298,7 +311,7 @@ begin
   register5_proc: process begin
       wait until rising_edge(i_clock);
       if( i_reset = '1') then
-            r5.magnitude <= to_unsigned(0, 11);
+            r5.magnitude <= to_unsigned(0, 10);
             r5.direction <= "000";
       elsif(valid_bits_stage2(0) = '1') then
             r5.magnitude <= max2.magnitude;
@@ -325,7 +338,7 @@ begin
       if( i_reset = '1') then
             r7 <= to_unsigned(0, 14);
       elsif (valid_bits_stage2(1) = '1') then 
-            r7 <= ("000" & r5.magnitude) sll 3;
+            r7 <= '0' & ("000" & r5.magnitude) sll 3;
       else 
             r7 <= r7;
       end if;
@@ -333,18 +346,38 @@ begin
 
   register8_proc: process begin
       wait until rising_edge(i_clock);
-      if ((valid_bits_stage2(2) = '1') and ((r7 > sub1))) then
+      if ((valid_bits_stage2(2) = '1') and ((r7 > add5))) then
           r_edge <= '1';
       else
           r_edge <= '0';
       end if;
   end process;
 
-  o_valid <= valid_bits_stage2(3); -- r_edge;
-  o_dir <= r5.direction and (2 downto 0 => r_edge); 
-  o_edge <= r_edge;
-  -- o_col <= pixel_counter(7 downto 0);
-  o_row <= std_logic_vector(pixel_counter(15 downto 8));
+  register_mode_proc: process begin
+      wait until rising_edge(i_clock);
+
+      -- the second bit is always the opposite of the reset signal
+      r_mode(1) <= not(i_reset);
+
+      -- the first bit is equal to 1 when reset or valid signals are high
+      if (i_valid = '1' or i_reset = '1') then
+          r_mode(0) <= '1';
+      -- if the second bit is high but the reset signal is low
+      -- then it goes into the idle state while waiting for the first valid signal
+      elsif (r_mode(1) = '0') then
+          r_mode(0) <= '0';
+      elsif (r_mode(0) = '1') then
+          r_mode(0) <= not(last_pixel_complete(1));
+      else
+          r_mode(0) <= r_mode(0);
+      end if;
+  end process;
+
+  o_mode    <= r_mode;
+  o_valid   <= valid_bits_stage2(3); -- r_edge;
+  o_dir     <= r5.direction and (2 downto 0 => r_edge); 
+  o_edge    <= r_edge;
+  o_row     <= std_logic_vector(pixel_counter(15 downto 8));
 
   increment_conv_table: process begin
       wait until rising_edge(i_clock);
@@ -399,7 +432,7 @@ begin
     c <= conv_table(2)(0);
 
     h <= conv_table(0)(1);
-    i <= conv_table(1)(1);
+    -- i <= conv_table(1)(1);
     d <= conv_table(2)(1);
 
     g <= conv_table(0)(2);

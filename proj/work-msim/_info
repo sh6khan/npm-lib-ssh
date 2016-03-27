@@ -9,23 +9,22 @@ z2
 cModel Technology
 Z0 d/home/lpavlovi/ece327/npm-lib-ssh/proj
 T_opt
-!s110 1458856158
-VaB^JWA1?A2AYl`?Y@o<nc0
+!s110 1459046954
+VlYF;DIPn:@aA2;QE1nhAL1
 Z1 04 9 4 work kirsch_tb main 1
-=1-14dae9740821-56f460de-8aabc-3e9c
-Z2 o-quiet -auto_acc_if_foreign -work work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g /kirsch_tb/period=20
+=1-c86000c95137-56f74a2a-b77-22dc
+o-quiet -auto_acc_if_foreign -work work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g /kirsch_tb/period=20 -g /kirsch_tb/test_num=3
 n@_opt
-Z3 OE;O;10.4a;61
+Z2 OE;O;10.4a;61
 R0
 T_opt1
-!s110 1458855684
-V<R=>SOW=56zEVG21NgcZX0
+!s110 1459047296
+V3IUG3:[9iCmW?P68jn^GO3
 R1
-=1-14dae9740821-56f45f03-cc60a-37a8
-R2
+=1-c86000c95137-56f74b7f-a28bc-276d
+o-quiet -auto_acc_if_foreign -work work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -sdfmax uut/chip=uw_tmp/kirsch_chip.sdf -suppress 1948 -g /kirsch_tb/period=20
 n@_opt1
-R3
-R0
+R2
 T_opt2
 !s110 1458959940
 VE>hUDf]4QKQQ[3U2IA`050
@@ -33,367 +32,639 @@ R1
 =1-c86000c95137-56f5f644-888a7-3378
 o-quiet -auto_acc_if_foreign -work work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g /kirsch_tb/period=20 -g /kirsch_tb/test_num=2
 n@_opt2
-R3
-Pfile_pkg
-Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z7 w1458767119
+R2
 R0
-Z8 8kirsch_unsynth_pkg.vhd
-Z9 Fkirsch_unsynth_pkg.vhd
+Pfile_pkg
+Z3 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 w1458767119
+R0
+Z7 8kirsch_unsynth_pkg.vhd
+Z8 Fkirsch_unsynth_pkg.vhd
 l0
 L9
 VGCig7kb;>fg_G=A=lW0[f3
 !s100 U1aXY0Ke0>klVHz9>WH_d2
-Z10 OE;C;10.4a;61
+Z9 OE;C;10.4a;61
 31
 b1
-Z11 !s110 1458959923
+Z10 !s110 1459047266
 !i10b 1
-Z12 !s108 1458959923.000000
-Z13 !s90 -93|+acc|-work|work-msim|mem.vhd|kirsch_synth_pkg.vhd|kirsch.vhd|string_pkg.vhd|kirsch_synth_pkg.vhd|kirsch_unsynth_pkg.vhd|kirsch_tb.vhd|
-Z14 !s107 kirsch_tb.vhd|kirsch_unsynth_pkg.vhd|string_pkg.vhd|kirsch.vhd|kirsch_synth_pkg.vhd|mem.vhd|
+Z11 !s108 1459047266.000000
+Z12 !s90 -93|+acc|-work|work-msim|uw_tmp/kirsch_chip.vhd|string_pkg.vhd|kirsch_synth_pkg.vhd|kirsch_unsynth_pkg.vhd|kirsch_tb.vhd|
+Z13 !s107 kirsch_tb.vhd|kirsch_unsynth_pkg.vhd|kirsch_synth_pkg.vhd|string_pkg.vhd|uw_tmp/kirsch_chip.vhd|
 !i113 0
-Z15 o-93 +acc -work work-msim
-Z16 tExplicit 1
+Z14 o-93 +acc -work work-msim
+Z15 tExplicit 1
 Bbody
-Z17 DPx4 work 8 file_pkg 0 22 GCig7kb;>fg_G=A=lW0[f3
+Z16 DPx4 work 8 file_pkg 0 22 GCig7kb;>fg_G=A=lW0[f3
+R3
 R4
 R5
-R6
 l0
 L21
 V5haXbWPG4TL[38o5aN4>[1
 !s100 CmEX2UN0SXVME9G83RhDn3
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
-Z18 nbody
+Z17 nbody
 Ekirsch
-Z19 w1458959921
-Z20 DPx4 work 7 max_pkg 0 22 lTTdnNd@UjJP7O7DzQSPc2
-Z21 DPx4 work 9 state_pkg 0 22 WbnN1gb15e8[>?DIAa3Qd2
-Z22 DPx4 work 16 kirsch_synth_pkg 0 22 dn^kVH<g][g2VA_XMTZ742
+Z18 w1459047190
+Z19 DPx4 work 16 kirsch_synth_pkg 0 22 dn^kVH<g][g2VA_XMTZ742
+Z20 DPx4 work 9 state_pkg 0 22 WbnN1gb15e8[>?DIAa3Qd2
+R3
+Z21 DPx4 work 7 max_pkg 0 22 lTTdnNd@UjJP7O7DzQSPc2
 R4
 R5
-R6
 R0
-Z23 8kirsch.vhd
-Z24 Fkirsch.vhd
+Z22 8uw_tmp/kirsch_chip.vhd
+Z23 Fuw_tmp/kirsch_chip.vhd
 l0
-L33
-VnLg:KWz_L0=UAgO[6BW2;0
-!s100 LQ;DDRaYhPC88G_F>NVn82
-R10
+L10451
+VJz?1fA_aR_l]X00T>zcic3
+!s100 T`^CzOBU;[o46`E92Jb]Q2
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
-Amain
-Z25 DEx4 work 3 mem 0 22 @9AHD<HI:>27;hdHcl6zz3
+Ashim
+Z24 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z25 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 27`FQ5CmF4^caEH<?d>DE1
+Z26 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z27 DPx9 cycloneii 20 cycloneii_components 0 22 X[Z`[a:IKYaOC5@jcofgH3
+Z28 DEx4 work 11 kirsch_chip 0 22 Y^]WaAdQJ51HT:hX>hoVE0
+R19
 R20
+R3
 R21
-R22
 R4
 R5
-R6
-Z26 DEx4 work 6 kirsch 0 22 nLg:KWz_L0=UAgO[6BW2;0
-l144
-L64
-V>4?AgHW;fRa2co<^;_YDh2
-!s100 n<o4GAgjG;clS]Oe[FK?g2
-R10
+Z29 DEx4 work 6 kirsch 0 22 Jz?1fA_aR_l]X00T>zcic3
+l10482
+L10480
+V;mUUE5j@MWobVN2T5UY:Y2
+!s100 c1<6k9FhhSP]DEaRW`ZM32
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
+Ekirsch_chip
+R18
+R24
+R25
+R26
+R4
+R5
+R27
+R0
+R22
+R23
+l0
+L34
+VY^]WaAdQJ51HT:hX>hoVE0
+!s100 5<LheoC:fQ4d5M`Q>Y6333
+R9
+31
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Astructure
+R24
+R25
+R26
+R4
+R5
+R27
+R28
+l518
+L156
+VfeXNjGd1Z[oW2l]YQ7SfT3
+!s100 OmX>3Z>M`jW_O`2m7_n5S1
+R9
+31
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
 Pkirsch_synth_pkg
+R3
 R4
 R5
 R6
-R7
 R0
-Z27 8kirsch_synth_pkg.vhd
-Z28 Fkirsch_synth_pkg.vhd
+Z30 8kirsch_synth_pkg.vhd
+Z31 Fkirsch_synth_pkg.vhd
 l0
 L12
 Vdn^kVH<g][g2VA_XMTZ742
 !s100 BQQhfD?jBH14Qab;z:Ab;0
-R10
+R9
 31
 b1
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
 Bbody
-R22
+R19
+R3
 R4
 R5
-R6
 l0
 L69
 V8bYPE=@AW^6JhTccYURJa2
 !s100 Q^^oHW`JK5k7UoEfl^R=X1
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
-R18
-Ekirsch_tb
-R7
-Z29 DPx4 work 10 string_pkg 0 22 ?Va4bV1_?joU`WWRd`UP@2
-Z30 DPx4 work 18 kirsch_unsynth_pkg 0 22 F>JT^T?=>S6j3aJA]VAJ40
 R17
-R22
+Ekirsch_tb
+R6
+Z32 DPx4 work 10 string_pkg 0 22 ?Va4bV1_?joU`WWRd`UP@2
+Z33 DPx4 work 18 kirsch_unsynth_pkg 0 22 F>JT^T?=>S6j3aJA]VAJ40
+R16
+R19
+R3
 R4
 R5
-R6
 R0
-Z31 8kirsch_tb.vhd
-Z32 Fkirsch_tb.vhd
+Z34 8kirsch_tb.vhd
+Z35 Fkirsch_tb.vhd
 l0
 L23
 Vb=NOh>gUSTTgfK<M_0K4]1
 !s100 SNVmlUdCL^kN9F<GK;=M?3
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
 Amain
 R20
 R21
-R26
 R29
-R30
-R17
-R22
+R32
+R33
+R16
+R19
+R3
 R4
 R5
-R6
 DEx4 work 9 kirsch_tb 0 22 b=NOh>gUSTTgfK<M_0K4]1
 l80
 L32
 VM>bn5z9J1dAjW>nLncQJz1
 !s100 =1dNKXEL?aJXIj0J@n^Gm2
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
 Pkirsch_unsynth_pkg
-R22
-R17
-R29
+R19
+R16
+R32
+R3
 R4
 R5
 R6
-R7
 R0
+R7
 R8
-R9
 l0
 L96
 VF>JT^T?=>S6j3aJA]VAJ40
 !s100 LWi]V<SUGz8h[RSQOH1Md3
-R10
+R9
 31
 b1
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
 Bbody
-R30
-R22
-R17
-R29
+R33
+R19
+R16
+R32
+R3
 R4
 R5
-R6
 l0
 L122
 V27]8iR5H@hBGS?SYE=YRI0
 !s100 D2`Sg3Nlb^1kE6A4Cg?;f2
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
-R18
+R17
 Pmax_pkg
-R22
-R21
+R19
+R20
+R3
 R4
 R5
-R6
-R19
+Z36 w1459047158
 R0
-R23
-R24
+Z37 8kirsch.vhd
+Z38 Fkirsch.vhd
 l0
 L19
 VlTTdnNd@UjJP7O7DzQSPc2
 !s100 8Zh5WA>8AOBF>QiJ0lCEd2
-R10
+R9
 31
-R11
+Z39 !s110 1459047189
 !i10b 1
-R12
-R13
-R14
+Z40 !s108 1459047189.000000
+Z41 !s90 -93|+acc|-work|work-msim|mem.vhd|kirsch_synth_pkg.vhd|kirsch.vhd|
+Z42 !s107 kirsch.vhd|kirsch_synth_pkg.vhd|mem.vhd|
 !i113 0
+R14
 R15
-R16
 Emem
-R7
+R6
+R3
 R4
 R5
-R6
 R0
-Z33 8mem.vhd
-Z34 Fmem.vhd
+Z43 8mem.vhd
+Z44 Fmem.vhd
 l0
 L23
 V@9AHD<HI:>27;hdHcl6zz3
 !s100 A:0W>;Uj;HXBoI]`^8EGd1
-R10
+R9
 31
-R11
+R39
 !i10b 1
-R12
-R13
-R14
+R40
+R41
+R42
 !i113 0
+R14
 R15
-R16
 Amain
+R3
 R4
 R5
-R6
-R25
+DEx4 work 3 mem 0 22 @9AHD<HI:>27;hdHcl6zz3
 l47
 L37
 V^jkooEEAd5OmS`Y>1m0WT0
 !s100 7USKP;XOVm>>g9=1LN4i22
-R10
+R9
 31
-R11
+R39
 !i10b 1
-R12
-R13
-R14
+R40
+R41
+R42
 !i113 0
+R14
 R15
-R16
-Pstate_pkg
+Emodgen_counter_17_0
+Z45 w1459047173
+R25
+R27
+R24
+Z46 DPx6 altera 11 dffeas_pack 0 22 JCZakf3B9VY]12fS@JRHJ2
+R26
+Z47 DPx6 altera 28 altera_primitives_components 0 22 aIQLCe@P<T?5mGZRE^k@A1
+Z48 DPx3 lpm 14 lpm_components 0 22 6WSW02hbTOREBEKUOT??a3
+Z49 DPx9 altera_mf 20 altera_mf_components 0 22 0@J:S@D7`SR2U20jC6HbS2
 R4
 R5
-R6
-R19
 R0
-R23
+Z50 8uw_tmp/kirsch_logic.vhd
+Z51 Fuw_tmp/kirsch_logic.vhd
+l0
+L17
+V^j6<zD9B9WoG4`9`gL1XV3
+!s100 ^D>HAb5@>CSnjOR>LhVFn2
+R9
+31
+Z52 !s110 1459047175
+!i10b 1
+Z53 !s108 1459047175.000000
+Z54 !s90 -93|+acc|-work|work-msim|uw_tmp/kirsch_logic.vhd|
+Z55 !s107 uw_tmp/kirsch_logic.vhd|
+!i113 0
+R14
+R15
+Aimplementation
+R25
+R27
 R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+DEx4 work 19 modgen_counter_17_0 0 22 ^j6<zD9B9WoG4`9`gL1XV3
+l43
+L31
+VXa8lO@`L4:lD4cGDz>?>Y3
+!s100 V0HeJ08B1G<XREI_hbc=G0
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Eram_dq_8_0
+R45
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+R0
+R50
+R51
+l0
+L192
+VR2o3T2?S0:]OE>6iEeGJO1
+!s100 ?5d>Jd>Y30KRcV8b8eG7n0
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Aimplementation
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+DEx4 work 10 ram_dq_8_0 0 22 R2o3T2?S0:]OE>6iEeGJO1
+l210
+L207
+VmoQiBd:JUg@i59SilBI[z1
+!s100 DYk<?8jbZCbCH>9>Km?PZ2
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Eram_dq_8_1
+R45
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+R0
+R50
+R51
+l0
+L269
+V6GSNSSWd@kJAShh97NgPN3
+!s100 Zg@Ba]5zgYle@L6eWc[JV2
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Aimplementation
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+DEx4 work 10 ram_dq_8_1 0 22 6GSNSSWd@kJAShh97NgPN3
+l287
+L284
+VIXk19k5<<QZf9j;f@JA923
+!s100 c]2H:V]9J82XA1J0ikRoQ0
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Eram_dq_8_2
+R45
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+R0
+R50
+R51
+l0
+L346
+V2EaU[FNJ1W^BFYbOOogfD1
+!s100 Fz[FLiWLijRDA67?H]PcP2
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Aimplementation
+R25
+R27
+R24
+R46
+R26
+R47
+R48
+R49
+R4
+R5
+DEx4 work 10 ram_dq_8_2 0 22 2EaU[FNJ1W^BFYbOOogfD1
+l364
+L361
+V[VbRIB`bidBD5E8i^P]0f3
+!s100 ]ghoWPRG`W77l=[k38d9^1
+R9
+31
+R52
+!i10b 1
+R53
+R54
+R55
+!i113 0
+R14
+R15
+Pstate_pkg
+R3
+R4
+R5
+R36
+R0
+R37
+R38
 l0
 L5
 VWbnN1gb15e8[>?DIAa3Qd2
 !s100 3^F5gPO87ea]ZfWLb5kmh3
-R10
+R9
 31
-R11
+R39
 !i10b 1
-R12
-R13
-R14
+R40
+R41
+R42
 !i113 0
+R14
 R15
-R16
 Pstring_pkg
+R4
 R5
 R6
-R7
 R0
-Z35 8string_pkg.vhd
-Z36 Fstring_pkg.vhd
+Z56 8string_pkg.vhd
+Z57 Fstring_pkg.vhd
 l0
 L7
 V?Va4bV1_?joU`WWRd`UP@2
 !s100 n?C6=hFK9IOf>z^3bg`Y53
-R10
+R9
 31
 b1
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
 Bbody
-R29
+R32
+R4
 R5
-R6
 l0
 L17
 V^SglVKeTT4a;2k2cNhI0W3
 !s100 JFS8:j^04ni@AVIzUz=9?0
-R10
+R9
 31
-R11
+R10
 !i10b 1
+R11
 R12
 R13
-R14
 !i113 0
+R14
 R15
-R16
-R18
+R17

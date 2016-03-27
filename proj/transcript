@@ -13,9 +13,9 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# vsim -lib work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g/kirsch_tb/test_num=2 -g/kirsch_tb/period=20 -wlf uw_tmp/vsim.wlf -t 1ns -do "uw_tmp/uw-sim.tcl" kirsch_tb 
-# Start time: 22:39:00 on Mar 25,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# vsim -lib work-msim -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera -L /opt-src/CMC/local/maagaard/kits-sim/altera/altera_mf -L /opt-src/CMC/local/maagaard/kits-sim/altera/lpm -L /opt-src/CMC/local/maagaard/kits-sim/altera/cycloneii -g/kirsch_tb/period=20 -sdfmax uut/chip=uw_tmp/kirsch_chip.sdf -wlf uw_tmp/vsim.wlf -t 1ns -do "uw_tmp/uw-sim.tcl" kirsch_tb 
+# Start time: 22:54:55 on Mar 26,2016
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -27,565 +27,66 @@
 # Loading work.state_pkg
 # Loading work.max_pkg
 # Loading work.kirsch_tb(main)#1
-# Loading work.kirsch(main)#1
-# Loading work.mem(main)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.kirsch(shim)#1
+# Loading work.kirsch_chip(structure)#1
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#1
+# Loading cycloneii.cycloneii_and1(altvital)#1
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#1
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#2
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#2
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#3
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#4
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#3
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#5
+# Loading cycloneii.cycloneii_ram_block(block_arch)#1
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#1
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#2
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#3
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#4
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#5
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#6
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#7
+# Loading cycloneii.cycloneii_ram_pulse_generator(pgen_arch)#1
+# Loading cycloneii.cycloneii_ram_pulse_generator(pgen_arch)#2
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#6
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#7
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#8
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#9
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)#1
+# Loading cycloneii.cycloneii_mux21(altvital)#1
+# Loading cycloneii.cycloneii_dffe(behave)#1
+# Loading cycloneii.cycloneii_asynch_io(behave)#1
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)#1
+# Loading cycloneii.cycloneii_ena_reg(behave)#1
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#10
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#4
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#11
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#12
+# Loading cycloneii.cycloneii_io(structure)#2
+# Loading cycloneii.cycloneii_io(structure)#3
+# Loading cycloneii.cycloneii_asynch_io(behave)#2
+# Loading instances from uw_tmp/kirsch_chip.sdf
+# Loading timing data from uw_tmp/kirsch_chip.sdf
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut/chip/i_clock_aI/asynch_inst File: /CMC/local/maagaard/tools/altera/quartus/eda/sim_lib/cycloneii_atoms.vhd
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb File: kirsch_tb.vhd
 # do uw_tmp/uw-sim.tcl
-# ** Note: XXXXXXXXXXXX reading image from tests/test2.txt
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(2)/memblock
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(1)/memblock
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(0)/memblock
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 10 ns  Iteration: 2  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(2)/memblock
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 10 ns  Iteration: 2  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(1)/memblock
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 10 ns  Iteration: 2  Instance: /kirsch_tb/uut/MEMORY_ARRAY_GEN(0)/memblock
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 370 ns  Iteration: 2  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 390 ns  Iteration: 2  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 1950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 2990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 3950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 4990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 5950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 6990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 7950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 8910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 9950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 10990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 11950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 12990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 13950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 14990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 15870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 16990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 17950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18830 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18910 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 18990 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19070 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19150 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19230 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19310 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19390 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19470 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19550 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19630 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19710 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19790 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19870 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 19950 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20030 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20110 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20190 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20270 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20350 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20430 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20510 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20590 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20670 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20750 ns  Iteration: 4  Instance: /kirsch_tb/uut
-# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
-#    Time: 20850 ns  Iteration: 2  Instance: /kirsch_tb/uut
-# ** Note: latency begin wait
-#    Time: 41295 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41310 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41330 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41350 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41370 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41390 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41410 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41430 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41450 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency waiting
-#    Time: 41470 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: latency = 8
-#    Time: 41470 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: XXXXXXXXXXXX got image
-#    Time: 5202670 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: XXXXXXXXXXXX PLEASE HIT CTRL-C TO EXIT THE SIMULATOR
-#    Time: 5202670 ns  Iteration: 1  Instance: /kirsch_tb
-# ** Note: XXXXXXXXXXXX sent image
-#    Time: 5242995 ns  Iteration: 0  Instance: /kirsch_tb
+# ** Error: (vish-4014) No objects found matching '/kirsch_tb/uut/pixel_counter'.
+# Error in macro ./uw_tmp/uw-sim.tcl line 26
+# (vish-4014) No objects found matching '/kirsch_tb/uut/pixel_counter'.
+#     while executing
+# "add wave -radix unsigned sim:/kirsch_tb/uut/pixel_counter"
+#     (file "kirsch_tb.sim" line 12)
+#     invoked from within
+# "source kirsch_tb.sim"
+#     invoked from within
+# "if { "kirsch_tb.sim" ne "" } {
+#   source kirsch_tb.sim
+# }"
 # Break key hit

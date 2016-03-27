@@ -1,0 +1,16 @@
+LATENCY = -1
+PHYS_SPEED = 101.260000
+LOGIC_PATHS = ( 6.972000, 6.876000, 0.096000, valid_bits_stage1(2), r3_magnitude(9),  ), ( 6.949000, 6.853000, 0.096000, valid_bits_stage1(1), r3_magnitude(9),  ), ( 6.749000, 6.653000, 0.096000, valid_bits_stage1(0), r3_magnitude(9),  ), ( 5.662000, 5.566000, 0.096000, conv_table(1)(0)(0), r3_magnitude(9),  ), ( 5.642000, 5.546000, 0.096000, conv_table(0)(1)(0), r3_magnitude(9),  )
+LOGIC_TIME = 6.972000
+PHYS_AREA = 375
+LOGIC_LUTS = 275
+LOGIC_AREA = 275
+LOGIC_SPEED = 143
+PHYS_TA = 270.026667
+ERRORS = 
+PHYS_REGS = 189
+PHYS_LUTS = 279
+LOGIC_REGS = 189
+LOGIC_TA_LAT = 520
+PHYS_TIME = 9.875568
+LOGIC_TA = 520
