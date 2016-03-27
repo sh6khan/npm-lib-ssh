@@ -179,7 +179,7 @@ begin
         last_pixel_complete(1) <= last_pixel_complete(1);
       end if;
 
-      if( i_reset = '1') then
+      if( i_reset = '1' or (last_pixel_complete = "11")) then
         row_index <= initial_row_state;
         last_pixel_complete(0) <= '0';
         last_pixel_complete(1) <= '0';
